@@ -20,3 +20,6 @@ adobe color
  3. 그냥 클릭과 드래그 클릭의 animation을 따로 준다.
  4. svg 필터를 이용한 다채로운 색 표현
  5. 로딩 애니메이션
+
+https://www.awwwards.com/ 웹 디자인 어워드
+https://material.io/ 레이아웃 그리드 참고
