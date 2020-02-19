@@ -1,0 +1,25 @@
+/* container common*/
+.container{height: 100vh;}
+.container .contents{width: 1200px; height: 100%; margin: 0 auto; border: 1px solid red; position: relative;}
+
+/* main */
+.container_main{background: #ebebeb;}
+.container_main .contents{}
+.container_main .contents .bg {z-index: -10;}
+.container_main .contents .bg > img{height: 818px; width: 983px; display: block; position: absolute; bottom: 20px; left: 50%; transform: translate(-50%, 0);}
+
+/* about */
+.container_about{background: #fbfbfb;}
+.container_about .contents{}
+
+/* work */
+.container_work{background: #fbfbfb;}
+.container_work .contents{}
+
+/* contact */
+.container_contact{height: 350px; background: #4c4c4c;}
+.container_contact .contents{}
+
+/* z-index 
+    background : -10(main)
+*/

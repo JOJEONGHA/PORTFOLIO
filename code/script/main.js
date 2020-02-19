@@ -1,0 +1,1 @@
+// main background 이미지 크기 조절하는 
