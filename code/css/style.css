@@ -1,16 +1,45 @@
 /* container common*/
-.container{height: 100vh;}
+.container{height: 100vh; position: relative;}
 .container .contents{width: 1200px; height: 100%; margin: 0 auto; border: 1px solid red; position: relative;}
 
 /* main */
 .container_main{background: #ebebeb;}
 .container_main .contents{}
+.container_main .logo > img{height: calc(0.072*100vh); position: absolute; left: 50px; top: calc(0.063*100vh);}
 .container_main .contents .bg {z-index: -10;}
-.container_main .contents .bg > img{height: 818px; width: 983px; display: block; position: absolute; bottom: 20px; left: 50%; transform: translate(-50%, 0);}
+.container_main .contents .bg > img{height: calc(0.75*100vh);  display: block; position: absolute; bottom: 20px; left: 50%; transform: translate(-50%, 0);}
+.container_main .menu .menuset{position: absolute; top: calc(0.08*100vh); right: 34px; z-index: 10;}
+.container_main .menu .menuset > li{float : left; font-family: 굴림; font-size: 2.5em; }
+.container_main .menu .menuset > li > a{display: block; padding: 0 19px; color: #c5c5c5;}
+.container_main .menu .menuset > li:last-child > a{padding-right: 16px;}
+.container_main .menu .menuset > li.on > a{color: #868686;}
+.container_main .contents .menu .menuset .menu_main{}
+.container_main .contents .menu .menuset .menu_about{}
+.container_main .contents .menu .menuset .menu_work{}
+.container_main .contents .menu .menuset .menu_contact{}
+.container_main .contents .stationery{ position: absolute; top : 50%; left: 50%; transform: translate(-50%, -50%);}
+.container_main .contents .stationery > img{height: calc(0.095*100vh);}
 
 /* about */
 .container_about{background: #fbfbfb;}
 .container_about .contents{}
+.container_about .contents .core_container{height: 650px; width: 1168px; border: 1px solid red; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto;}
+.container_about .contents .core_container .pic{}
+.container_about .contents .core_container .pic .bg{width: 530px; height: 525px; background: #efefef; position: absolute; left: 0; bottom : 0;}
+.container_about .contents .core_container .pic .man{}
+.container_about .contents .core_container .pic .man >img{ position: absolute; bottom: 0; left: 87px;}
+.container_about .contents .core_container .intro{position: absolute; left: 574px; top: 15px;}
+.container_about .contents .core_container .intro .name{display: block; color: #3f4342; font-size: 5.625em; font-family: 'Changa One', cursive;}
+.container_about .contents .core_container .intro .ment{padding: 50px 0 0 0;}
+.container_about .contents .core_container .intro .ment > img{}
+.container_about .contents .core_container .intro .skill{padding: 35px 0 0 0;}
+.container_about .contents .core_container .intro .skill > ul >li{padding: 0 0 15px 0;}
+.container_about .contents .core_container .intro .skill > ul >li .text{padding: 0 0 8px 0;}
+.container_about .contents .core_container .intro .skill > ul >li .text > span{color: #888888;}
+.container_about .contents .core_container .intro .skill > ul >li .text .name{font-family: 'Dosis', sans-serif; font-size: 1.562em; font-weight: 600; display: inline-block;}
+.container_about .contents .core_container .intro .skill > ul >li .text .percent{font-family: 'Calibri', sans-serif; font-size: 1.875em;}
+.container_about .contents .core_container .intro .skill > ul >li .base{width: 594px; height: 15px; background: #efefef; border-radius: 50px;}
+.container_about .contents .core_container .intro .skill > ul >li .base .gauge{width: 400px; height: 100%; background: #056c64; border-radius: 50px;}
 
 /* work */
 .container_work{background: #fbfbfb;}

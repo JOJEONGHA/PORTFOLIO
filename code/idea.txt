@@ -1,0 +1,2 @@
+about
+ - skill gauge 바 올라가는 모션 + 숫자 변화는 모션

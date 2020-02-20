@@ -1,5 +1,6 @@
 /* font */
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(https://fonts.googleapis.com/css?family=Changa+One|Dosis&display=swap);
 
 .testline{border: 1px solid #f00;}
 *{padding: 0; margin: 0; box-sizing: border-box;}
