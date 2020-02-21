@@ -44,10 +44,29 @@
 /* work */
 .container_work{background: #fbfbfb;}
 .container_work .contents{}
+.container_work .contents .core{width: 100%; height: 743px; position: absolute; top: 0; bottom: 0; margin: auto; border: 1px solid blue;}
+.container_work .contents .core .text{padding: 0 0 0 0;}
+.container_work .contents .core .text .base{display: block; font-family: "Malgun Gothic", serif; text-align: center;}
+.container_work .contents .core .text .title{font-size: 2.188em; font-weight: 600;}
+.container_work .contents .core .text .info{font-size: 1.25em;}
+.container_work .contents .core .web{position: relative; margin: 40px 0 0 0;}
+.container_work .contents .core .web .sub{background: green; height: 421px; width: 503px; position: absolute; top: 269.5px; transform: translate(-50%, -50%); }
+.container_work .contents .core .web .main{position: absolute; background: red; height: 539px; width: 772px; z-index: 10; left: 50%; top: 0; transform: translate(-50%, 0);}
+.container_work .contents .core .web .sub{opacity: 0.4;}
+.container_work .contents .core .web .n1{left: 22%;}
+.container_work .contents .core .web .n3{left: 78%;}
+.container_work .contents .core .btn > img{position: absolute; top: 50%; }
+.container_work .contents .core .btn .btn_left{left: 130px; transform: translate(-50%, -50%);}
+.container_work .contents .core .btn .btn_right{right: 130px; transform: translate(50%, -50%);}
+.container_work .contents .core .bg{position: absolute; right: 0; bottom: -70px; font-family: 'Black Han Sans'; font-size: 12.5em; color: #f4f3f3;}
 
 /* contact */
 .container_contact{height: 350px; background: #4c4c4c;}
 .container_contact .contents{}
+.container_contact .contents .core{height: 250px;  width: 570px; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto;}
+.container_contact .contents .core	.logo > img{margin: 0 auto; display: block; padding: 26px 0 30px 0;}
+.container_contact .contents .core	.text{}
+.container_contact .contents .core	.text > span{display: block; font-family:Gulim, sans-serif; color: #fbfbfb; font-size: 1.375em; font-weight: 500; text-align: center; padding: 0 0 30px 0;}
 
 /* z-index 
     background : -10(main)
