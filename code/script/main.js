@@ -1,10 +1,20 @@
 // main background 이미지 크기 조절하는 
 $(function () {
-    fullpage();   
-})
-
-function fullpage(){
     var elm = ".container";
+    
+    
+    // // Make to work Opacity by Contact page
+    // if(scrollBottom == 0){
+    //     var workPage = $(".container_work .contents"); 
+
+    //     workPage.stop().animate({
+    //          opacity : 0.3
+    //      }, {
+    //          duration: 800, complete: function () {
+    //          }
+    //      });
+    //  }  
+
     $(elm).each(function (index) {
         // 개별적으로 Wheel 이벤트 적용
         $(this).on("mousewheel DOMMouseScroll", function (e) {
@@ -20,26 +30,29 @@ function fullpage(){
                 delta = -event.detail / 3;
             }
                 
-
             var moveTop = $(window).scrollTop();    // scrollbar top point
             var elmSelecter = $(elm).eq(index);
+            
+            // If state last page, forced to give last index
+            var scrollBottom = $("body").height() - ($(window).height() + $(window).scrollTop());
 
-            console.log("moveTop first >> " + moveTop);
-            // console.log("elmSelecter >> " + $(elm).eq(index));
-            // 마우스휠을 위에서 아래로
+            // Scrollbar on bottom
+            if(scrollBottom == 0){
+                elmSelecter.addClass("off");
+                elmSelecter = elmSelecter.next();
+            } 
+               
             if (delta < 0) {
-                if ($(elmSelecter).next() != undefined) {
+                if (elmSelecter.next() != undefined) {
                     try {
                         moveTop = $(elmSelecter).next().offset().top;
-                        console.log("next moveTop >> " + moveTop);
                     } catch (e) { }
                 }
             } else {
                 // 마우스휠을 아래에서 위로
-                if ($(elmSelecter).prev() != undefined) {
+                if (elmSelecter.prev() != undefined) {
                     try {
                         moveTop = $(elmSelecter).prev().offset().top;
-                        console.log("prev moveTop >> " + moveTop);
                     } catch (e) { }
                 }
             }
@@ -49,9 +62,8 @@ function fullpage(){
                 scrollTop: moveTop + 'px'
             }, {
                 duration: 800, complete: function () {
-                    console.log("moveTop >> " + moveTop);
                 }
             });
         });
     });
-};
+})
