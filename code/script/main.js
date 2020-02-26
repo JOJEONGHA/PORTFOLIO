@@ -1,4 +1,7 @@
 $(function () {
+    // test
+    counterUp();
+    // >>>>>>>>>>>>>>>>>>>>>>
     scrollTop();    // Refresh btn make scroll to top
     var elm = ".container";
 
@@ -20,7 +23,7 @@ $(function () {
             var elmSelecter = $(elm).eq(index);
             var scrollBottom = $("body").height() - ($(window).height() + $(window).scrollTop());   // scrollbar bottom point
             var lastP = 0;
-
+    
             if (delta < 0) {
                 if (elmSelecter.next() != undefined) {
                     try {
@@ -30,6 +33,7 @@ $(function () {
                         // (about) About page animation
                         if($(elm).eq(index).next().hasClass("container_about")){
                             $(elm).eq(index).next().find(".base .gauge").addClass("on");
+                            counterUp();
                         }
 
                         // (Contact)Next page is last page
@@ -77,6 +81,7 @@ $(function () {
     });
 })
 
+// Add class to class Bundle
 function Control_off(off,...classBundle){
     for(var _class of classBundle){
         if(off == 1){
@@ -87,6 +92,7 @@ function Control_off(off,...classBundle){
     }
 }
 
+// Disable to aTags
 function Disable_aTag(onoff,...aTags){
     for(var aTag of aTags){
         if(onoff == 1){
@@ -97,8 +103,36 @@ function Disable_aTag(onoff,...aTags){
     }
 }
 
+// Refresh make to top of view
 function scrollTop(){
     $("html, body").animate({ scrollTop: 0 }, "slow");
+}
+
+// number counter up
+function counterUp(){
+    // ...numBundle
+    // for(var num in numBundle){
+    //     // 1. Input gauge status 
+    //     // 2. Check status a short time
+    //     // 3. that number to make html text
+    //     // 4. Only one operation
+    // }
+    var frame = 100,
+        duration = $(".html .base .gauge").css("transition-duration"),
+        gauge = $(".html .base .gauge .percent > span").value;
+    duration = duration.match(/(\d+)/g);
+    duration = duration[0] + duration[1];
+    
+
+    var timeunit= duration/frame;
+    console.log(timeunit);
+    for(var i = 0; i < frame; i++){
+        setTimeout(function(){
+            var w = $(".html .base .gauge").width();
+            $(".html .base .gauge .percent > span").html(w);
+            console.log(w);
+        },timeunit*1000*i);
+    }
 }
 
 

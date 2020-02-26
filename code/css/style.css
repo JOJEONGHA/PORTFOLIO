@@ -35,17 +35,17 @@
 .container_about .contents .core_container .intro .skill{padding: 37px 0 0 0;}
 .container_about .contents .core_container .intro .skill > ul >li{padding: 0 0 5px 0;}
 .container_about .contents .core_container .intro .skill > ul >li .text{padding: 0 0 0px 0;}
-.container_about .contents .core_container .intro .skill > ul >li .text > span{color: #888888; font-family: 'Dosis', sans-serif;}
+.container_about .contents .core_container .intro .skill > ul >li .text > span,
+.container_about .contents .core_container .intro .skill > ul >li .base .gauge > span{color: #888888; font-family: 'Dosis', sans-serif;}
 .container_about .contents .core_container .intro .skill > ul >li .text .name{ font-size: 1.438em; font-weight: 600; display: inline-block;}
-.container_about .contents .core_container .intro .skill > ul >li .text .percent{font-size: 1.463em;}
+.container_about .contents .core_container .intro .skill > ul >li .base .gauge > span{font-size: 1.463em;}
 .container_about .contents .core_container .intro .skill > ul >li .base{width: 594px; height: 15px; background: #efefef; border-radius: 50px;}
-.container_about .contents .core_container .intro .skill > ul >li .base .gauge{width: 0px; height: 100%; background: #056c64; border-radius: 50px; transition: all 1.5s ease .8s;}
-.container_about .contents .core_container .intro .skill > ul >li .base .gauge{width: 0px; height: 100%; background: #056c64; border-radius: 50px; transition: all 1.5s ease .8s;}
+.container_about .contents .core_container .intro .skill > ul >li .base .gauge{position: relative; width: 0px; height: 100%; background: #056c64; border-radius: 50px; transition: all 1.5s ease .8s;}
+.container_about .contents .core_container .intro .skill > ul >li .base .gauge > span{position: absolute; top: -30px; right: 5px;}
 .container_about .contents .core_container .intro .skill > ul .html .base .gauge.on{width: calc(0.92*594px);}
 .container_about .contents .core_container .intro .skill > ul .css .base .gauge.on{width: calc(0.85*594px);}
 .container_about .contents .core_container .intro .skill > ul .jquery .base .gauge.on{width: calc(0.70*594px);}
 .container_about .contents .core_container .intro .skill > ul .photoshop .base .gauge.on{width: calc(0.62*594px);}
-
 
 /* work */
 .container_work{background: #fbfbfb; }
