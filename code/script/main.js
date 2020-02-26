@@ -1,11 +1,8 @@
-// main background 이미지 크기 조절하는 
 $(function () {
-    // 마지막 이전 에서 마우스 down -> opacity 활성화
-
+    scrollTop();    // Refresh btn make scroll to top
     var elm = ".container";
 
     $(elm).each(function (index) {
-        // 개별적으로 Wheel 이벤트 적용
         $(this).on("mousewheel DOMMouseScroll", function (e) {
             e.preventDefault();
             var delta = 0;
@@ -21,48 +18,87 @@ $(function () {
                 
             var moveTop = $(window).scrollTop();    // scrollbar top point
             var elmSelecter = $(elm).eq(index);
-            
-            // If state last page, forced to give last index
-            var scrollBottom = $("body").height() - ($(window).height() + $(window).scrollTop());
+            var scrollBottom = $("body").height() - ($(window).height() + $(window).scrollTop());   // scrollbar bottom point
+            var lastP = 0;
 
-            // Scrollbar on bottom
-            if(scrollBottom == 0){
-                elmSelecter.addClass("off");
-                elmSelecter = elmSelecter.next();
-            } 
-               
             if (delta < 0) {
                 if (elmSelecter.next() != undefined) {
                     try {
-                        // 마지막 이전, OFF CLASS 추가
-                        if(elmSelecter.next().offset().top == $(elm).last().offset().top){
-                            if(index != $(elm).length - 1)
-                                elmSelecter.addClass("off");
-                        }
+                        // (Move)Mouse wheel up to down
                         moveTop = $(elmSelecter).next().offset().top;
+
+                        // (about) About page animation
+                        if($(elm).eq(index).next().hasClass("container_about")){
+                            $(elm).eq(index).next().find(".base .gauge").addClass("on");
+                        }
+
+                        // (Contact)Next page is last page
+                        var nextH = $(elmSelecter).next().height();
+                        var lastH = $(elm).last().height();
+                        if( nextH == lastH)
+                            lastP = 1;
+
                     } catch (e) { }
                 }
             } else {
-                // 마우스휠을 아래에서 위로
+                // Mouse wheel down to up
                 if (elmSelecter.prev() != undefined) {
                     try {
-                        // 마지막 이전, OFF CLASS 제거
-                        if(elmSelecter.next().offset().top == $(elm).last().offset().top){
-                            elmSelecter.addClass("off");
-                        }    
-                        moveTop = $(elmSelecter).prev().offset().top;
+                        if(scrollBottom < 10){
+                            // (Contact)Next page is last page
+                            moveTop = $(elmSelecter).offset().top;
+                            lastP = 0;
+                        }
+                        else{
+                            // (Move)Mouse wheel up to down
+                            moveTop = $(elmSelecter).prev().offset().top;
+                        }
                     } catch (e) { }
                 }
             }
 
-            // 화면 이동 0.8초(800)
+            // View move
             $("html,body").stop().animate({
                 scrollTop: moveTop + 'px'
             }, {
                 duration: 800, complete: function () {
-                    console.log("complete");
                 }
             });
+
+            // Control Opacity
+            if(lastP == 1){
+                Control_off(1,$(elm).eq(index).children(".contents"));
+                Disable_aTag(1,$(".btn_left"),$(".btn_right"));
+            }else{
+                Control_off(0,$(elm).eq(index).children(".contents"));
+                Disable_aTag(0,$(".btn_left"),$(".btn_right"));
+            }
         });
     });
 })
+
+function Control_off(off,...classBundle){
+    for(var _class of classBundle){
+        if(off == 1){
+            _class.addClass("off");
+        }else{
+            _class.removeClass("off")
+        }
+    }
+}
+
+function Disable_aTag(onoff,...aTags){
+    for(var aTag of aTags){
+        if(onoff == 1){
+            aTag.addClass("off");
+        }else{
+            aTag.removeClass("off");
+        }  
+    }
+}
+
+function scrollTop(){
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+}
+
+

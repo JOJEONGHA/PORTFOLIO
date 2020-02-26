@@ -11,6 +11,8 @@ a:link,
 a:visited,
 a:hover {color: #000; text-decoration: none; display: block;}
 
+a.off{cursor: default;}
+
 ul,
 li{list-style: none;}
 
