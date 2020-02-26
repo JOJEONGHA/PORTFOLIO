@@ -1,19 +1,8 @@
 // main background 이미지 크기 조절하는 
 $(function () {
-    var elm = ".container";
-    
-    
-    // // Make to work Opacity by Contact page
-    // if(scrollBottom == 0){
-    //     var workPage = $(".container_work .contents"); 
+    // 마지막 이전 에서 마우스 down -> opacity 활성화
 
-    //     workPage.stop().animate({
-    //          opacity : 0.3
-    //      }, {
-    //          duration: 800, complete: function () {
-    //          }
-    //      });
-    //  }  
+    var elm = ".container";
 
     $(elm).each(function (index) {
         // 개별적으로 Wheel 이벤트 적용
@@ -45,6 +34,11 @@ $(function () {
             if (delta < 0) {
                 if (elmSelecter.next() != undefined) {
                     try {
+                        // 마지막 이전, OFF CLASS 추가
+                        if(elmSelecter.next().offset().top == $(elm).last().offset().top){
+                            if(index != $(elm).length - 1)
+                                elmSelecter.addClass("off");
+                        }
                         moveTop = $(elmSelecter).next().offset().top;
                     } catch (e) { }
                 }
@@ -52,6 +46,10 @@ $(function () {
                 // 마우스휠을 아래에서 위로
                 if (elmSelecter.prev() != undefined) {
                     try {
+                        // 마지막 이전, OFF CLASS 제거
+                        if(elmSelecter.next().offset().top == $(elm).last().offset().top){
+                            elmSelecter.addClass("off");
+                        }    
                         moveTop = $(elmSelecter).prev().offset().top;
                     } catch (e) { }
                 }
@@ -62,6 +60,7 @@ $(function () {
                 scrollTop: moveTop + 'px'
             }, {
                 duration: 800, complete: function () {
+                    console.log("complete");
                 }
             });
         });
