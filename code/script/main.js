@@ -1,6 +1,6 @@
 $(function () {
-    // test
-    counterUp();
+    var count_one = 0;
+    
     // >>>>>>>>>>>>>>>>>>>>>>
     scrollTop();    // Refresh btn make scroll to top
     var elm = ".container";
@@ -33,9 +33,10 @@ $(function () {
                         // (about) About page animation
                         if($(elm).eq(index).next().hasClass("container_about")){
                             $(elm).eq(index).next().find(".base .gauge").addClass("on");
-                            counterUp();
-                        }
-
+                            if(count_one == 0)
+                                counter();                           
+                        }                        
+                        
                         // (Contact)Next page is last page
                         var nextH = $(elmSelecter).next().height();
                         var lastH = $(elm).last().height();
@@ -71,11 +72,11 @@ $(function () {
 
             // Control Opacity
             if(lastP == 1){
-                Control_off(1,$(elm).eq(index).children(".contents"));
-                Disable_aTag(1,$(".btn_left"),$(".btn_right"));
+                Control_off(true,$(elm).eq(index).children(".contents"));
+                Disable_aTag(true,$(".btn_left"),$(".btn_right"));
             }else{
-                Control_off(0,$(elm).eq(index).children(".contents"));
-                Disable_aTag(0,$(".btn_left"),$(".btn_right"));
+                Control_off(false,$(elm).eq(index).children(".contents"));
+                Disable_aTag(false,$(".btn_left"),$(".btn_right"));
             }
         });
     });
@@ -84,7 +85,7 @@ $(function () {
 // Add class to class Bundle
 function Control_off(off,...classBundle){
     for(var _class of classBundle){
-        if(off == 1){
+        if(off == true){
             _class.addClass("off");
         }else{
             _class.removeClass("off")
@@ -95,7 +96,7 @@ function Control_off(off,...classBundle){
 // Disable to aTags
 function Disable_aTag(onoff,...aTags){
     for(var aTag of aTags){
-        if(onoff == 1){
+        if(onoff == true){
             aTag.addClass("off");
         }else{
             aTag.removeClass("off");
@@ -109,7 +110,7 @@ function scrollTop(){
 }
 
 // number counter up
-function counterUp(){
+function counter(){
     // ...numBundle
     // for(var num in numBundle){
     //     // 1. Input gauge status 
@@ -119,20 +120,22 @@ function counterUp(){
     // }
     var frame = 100,
         duration = $(".html .base .gauge").css("transition-duration"),
+        delay = $(".html .base .gauge").css("transition-delay"),
         gauge = $(".html .base .gauge .percent > span").value;
-    duration = duration.match(/(\d+)/g);
+    duration = duration.match(/(\d+)/g)
     duration = duration[0] + duration[1];
-    
+    delay = delay.match(/(\d+)/g);
+    delay = delay[0] + delay[1];
 
-    var timeunit= duration/frame;
-    console.log(timeunit);
-    for(var i = 0; i < frame; i++){
-        setTimeout(function(){
-            var w = $(".html .base .gauge").width();
-            $(".html .base .gauge .percent > span").html(w);
-            console.log(w);
-        },timeunit*1000*i);
-    }
+    var timeunit = duration/frame;
+    setTimeout(function(){
+        for(var i = 0; i < frame; i++){
+            setTimeout(function(){
+                var w = $(".html .base .gauge").width();
+                $(".html .base .gauge .percent > span").html(w);
+            },timeunit*100*i);
+        }
+    },delay*100);
 }
 
 
