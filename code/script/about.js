@@ -36,6 +36,9 @@ function percentControl(elm){
             easing: 'swing',
             step: function () {
                 _this.text(Math.ceil(this.Counter));
+            },
+            complete : function(){
+                _this.text(num);  
             }
         });
     });
