@@ -1,19 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .box{width : 100px; height : 100px; border : 1px solid red;}
-        .box.on{border: 2px solid green;}
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <title>JS Bin</title>
 </head>
+
 <body>
-    <div class="box"></div>
-    <div class="box on"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
+
+    <span class="Count">200</span>
+    <span class="Count">55</span>
+    <script>
+        $('.Count').each(function () {
+            var _this = $(this),
+                num = _this.text();
+            jQuery({ Counter: 0 }).delay(3000).animate({ Counter: _this.text() }, {
+                duration: 1500,
+                easing: 'swing',
+                step: function () {
+                    _this.text(Math.ceil(this.Counter));
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
