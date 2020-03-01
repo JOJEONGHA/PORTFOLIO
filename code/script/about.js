@@ -1,15 +1,24 @@
 // About page operation
 $(function(){
-    var elm = $(".container_about");
+    var elm = $(".container_about"),
+        per = elm.find(".base .gauge .percent > span");
+    // TODO : percentage text opacity controll
+    // Pre-save percentage Value
+    var perNum = {};
+    per.each(function(index){
+        perNum[index] = $(this).text();
+    })
+
     // Run when scrolling
-    $(this).on("mousewheel DOMMouseScroll", function (e) {
+    $(this).scroll(function(){
         if(elm.hasClass("on")){
             gaugeControl(true,".html",".css",".jquery",".photoshop");
-            percentControl(elm.find(".base .gauge .percent > span"));
+            percentControl(per,perNum);
         }   
-        else
+        else{
             gaugeControl(false,".html",".css",".jquery",".photoshop");
-    })  
+        }
+    }) 
 })
 
 // Give or Remove "on" class to gauge
@@ -25,20 +34,15 @@ function gaugeControl(chk,...bundle){
 }
 
 // Control about percentage text
-function percentControl(elm){
-    elm.each(function () {
-        var _this = $(this),
-        num = _this.text();
-
-        _this.text(0);  // number initialization to 0
-        jQuery({ Counter: 0 }).delay(800).animate({ Counter: num }, {
+function percentControl(elm,num){
+    elm.each(function (index) {
+        var _this = $(this);
+        
+        jQuery({ Counter: 0 }).animate({ Counter: num[index] }, {
             duration: 1500,
             easing: 'swing',
             step: function () {
                 _this.text(Math.ceil(this.Counter));
-            },
-            complete : function(){
-                _this.text(num);  
             }
         });
     });

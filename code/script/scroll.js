@@ -8,7 +8,7 @@ $(function () {
     $(this).on("mousewheel DOMMouseScroll", function (e) {
         if(isMoving == false){
             isMoving = true;
-        
+            var _duration = 800;  // moving duration
             // mouse wheel value(+ : up, - : down)
             var delta = 0;
             if (!event) event = window.event;
@@ -21,28 +21,33 @@ $(function () {
             }
 
             var moveTop = $(elm).offset().top;    // scrollbar top point
-            var elmSelecter = $(elm).removeClass("on"); // Recent class removed "on"
-
+            var elmSelecter = $(elm).removeClass("on");
+            
             if (delta < 0) {
                 // (Move)Mouse wheel up to down
-                if (elmSelecter.next() != undefined) {
+                if (elmSelecter.next().index() != -1) {
                     try { 
+                        console.log(elmSelecter.next().index());
                         moveTop =topPostion(elmSelecter,"next");
                     } catch (e) { }
+                }else{
+                    elmSelecter.addClass("on");
+                    _duration = 0;
                 }
             } else {
                 // (Move)Mouse wheel down to up
-                if (elmSelecter.prev() != undefined) {
+                if (elmSelecter.prev().index() != -1) {
                     try {
                         moveTop = topPostion(elmSelecter,"prev");
                     } catch (e) { }
+                }else{
+                    elmSelecter.addClass("on");
+                    _duration = 0;
                 }
             }
             
-            // View move
-            var _duration = 800;
             // TODO : contact 에 페이지 이동시 속도 변화
-
+            // View move
             $("html,body").stop().animate({
                 scrollTop: moveTop + 'px'
             }, {

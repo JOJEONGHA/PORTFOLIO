@@ -6,27 +6,68 @@
     <meta name="viewport" content="width=device-width">
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <title>JS Bin</title>
+    <style>
+        .center {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        p {
+            width: 70%;
+            font-size: 30px;
+            display: block;
+            text-align: center;
+        }
+
+        .char {
+            font-size: 40px;
+            height: 40px;
+            animation: an 1s ease-out 1s both;
+            display: inline-block;
+        }
+
+        @keyframes an {
+            from {
+                opacity: 0;
+                transform: perspective(500px) translate3d(-35px, -40px, -150px) rotate3d(1, -1, 0, 35deg);
+            }
+
+            to {
+                opacity: 1;
+                transform: perspective(500px) translate3d(0, 0, 0);
+            }
+        }
+    </style>
 </head>
 
 <body>
-
-    <span class="Count">200</span>
-    <span class="Count">55</span>
+    <div class="center">
+        <p id="text">기존의 혁신적인 구조를 좀더 유기적인 구조로 변경하여 상큼한 느낌을 적용.</p>
+            <!-- <p id="text">서광주세무서</p> -->
+                        <!-- <p class="text">기존의 혁신적인 구조를 좀더 유기적인 구조로 변경하여 상큼한 느낌을 적용.</p> -->
+    </div>
     <script>
-        $('.Count').each(function () {
-            var _this = $(this),
-                num = _this.text();
-            jQuery({ Counter: 0 }).delay(3000).animate({ Counter: _this.text() }, {
-                duration: 1500,
-                easing: 'swing',
-                step: function () {
-                    _this.text(Math.ceil(this.Counter));
-                },
-                complete : function(){
-                    
-                }
-            });
-        });
+        var text = document.getElementById('text');
+        var newDom = '';
+        var animationDelay = 6;
+
+        for(let i = 0; i < text.innerText.length; i++)
+        {
+            newDom += '<span class="char">' + (text.innerText[i] == ' ' ? '&nbsp;' : text.innerText[i])+ '</span>';
+        }
+        console.log(newDom);
+
+        text.innerHTML = newDom;
+        var length = text.children.length;
+
+        for(let i = 0; i < length; i++)
+        {
+            text.children[i].style['animation-delay'] = animationDelay * i + 'ms';
+        }
+    
     </script>
 </body>
 
