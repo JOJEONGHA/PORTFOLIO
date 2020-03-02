@@ -46,7 +46,6 @@ $(function () {
                 }
             }
             
-            // TODO : contact 에 페이지 이동시 속도 변화
             // View move
             $("html,body").stop().animate({
                 scrollTop: moveTop + 'px'

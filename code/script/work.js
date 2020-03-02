@@ -1,7 +1,9 @@
 // Work page operation
 $(function () {
     // TODO : <Simple> Simplification all code
-    // TODO : work Text change
+    // TODO : Text animation
+    // TODO : Web animation
+    // TODO : lr button on & off
     var workP = $(".container_work"),
         contactP = $(".container_contact");
     var elm = $(".container_work .contents .core");
@@ -32,7 +34,11 @@ $(function () {
     var firstIndex = 0;
     var webM = weblist.find(".works_" + firstIndex),
         webR = weblist.find(".works_" + (firstIndex + 1));
+    var btnL = elm.find(".btn .btn_left"),
+        btnR = elm.find(".btn .btn_right");
     
+    // Why doesn't operate??
+    // btnL.addClass("off");
     webM.addClass("mid");
     webR.addClass("lr");
 
@@ -40,7 +46,7 @@ $(function () {
     var left = mid - step,
         right = mid + step,
         web = weblist.find(".work");
-    elm.find(".btn .btn_left").click(function(){
+        btnL.click(function(){
         // work moving
         if (lefts[0] != mid) {
             for (var i in lefts) {
@@ -48,19 +54,16 @@ $(function () {
                 var web = weblist.find(".works_" + i);
                 web.css("left", lefts[i] + "%");
             }
+            
             weblist.find(".work").removeClass("mid");
             weblist.find(".work").removeClass("lr");
             var midIndex = jQuery.inArray(50,lefts);
-            var webM = weblist.find(".works_" + midIndex),
-                webL = weblist.find(".works_" + (midIndex - 1)),
-                webR = weblist.find(".works_" + (midIndex + 1));
-
-            webM.addClass("mid");
-            webL.addClass("lr");
-            webR.addClass("lr");
+            positionC(weblist,midIndex);    // Give class about position
+        }else{
+            // button 비활성화 (Left)
         }
     });
-    elm.find(".btn .btn_right").click(function(){
+    btnR.click(function(){
         // work moving
         if (lefts[lefts.length - 1] != mid) {
             for (var i in lefts) {
@@ -71,13 +74,9 @@ $(function () {
             weblist.find(".work").removeClass("mid");
             weblist.find(".work").removeClass("lr");
             var midIndex = jQuery.inArray(50,lefts);
-            var webM = weblist.find(".works_" + midIndex),
-                webL = weblist.find(".works_" + (midIndex - 1)),
-                webR = weblist.find(".works_" + (midIndex + 1));
-
-            webM.addClass("mid");
-            webL.addClass("lr");
-            webR.addClass("lr");
+            positionC(weblist,midIndex);    // Give class about position
+        }else{
+            // button 비활성화 (right)
         }
     })
 
@@ -112,6 +111,17 @@ function bodyHeight(){
     })
     
     return bodyHeight;
+}
+
+// Give class about position
+function positionC(weblist,midIndex) {
+    var webM = weblist.find(".works_" + midIndex),
+        webL = weblist.find(".works_" + (midIndex - 1)),
+        webR = weblist.find(".works_" + (midIndex + 1));
+
+    webM.addClass("mid");
+    webL.addClass("lr");
+    webR.addClass("lr");
 }
 
 // String box

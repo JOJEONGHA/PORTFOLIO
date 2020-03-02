@@ -22,9 +22,11 @@ body {
 
 /* about */
 .container_about{background: #fbfbfb;}
-.container_about .contents .core_container{height: 650px; width: 1168px; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto;}
-.container_about .contents .core_container .pic .bg{width: 530px; height: 525px; background: #efefef; position: absolute; left: 0; bottom : 0;}
-.container_about .contents .core_container .pic .man >img{ position: absolute; bottom: 0; left: 87px;}
+.container_about .contents .core_container{height: 650px; width: 1168px; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; }
+.container_about .contents .core_container .pic .bg{width: 530px; height: 525px; background: #efefef; position: absolute; left: -200px; bottom : 0; transition: all 0.8s  ease .8s; opacity: 0;}
+.container_about.on .contents .core_container .pic .bg{left: 0; opacity: 1;}
+.container_about .contents .core_container .pic .man >img{ position: absolute; bottom: 0; left: 187px; transition: all 0.8s ease .8s; opacity: 0;}
+.container_about.on .contents .core_container .pic .man > img{left: 87px; opacity: 1;}
 .container_about .contents .core_container .intro{position: absolute; left: 574px; top: 15px;}
 .container_about .contents .core_container .intro .name{display: block; color: #3f4342; font-size: 5.625em; font-family: 'Changa One', cursive; padding: 20px 0 0 0;}
 .container_about .contents .core_container .intro .ment{padding: 81px 0 0 0;}
@@ -43,7 +45,8 @@ body {
 .container_about .contents .core_container .intro .skill > ul .css .base .gauge.on{width: calc(0.85*594px);}
 .container_about .contents .core_container .intro .skill > ul .jquery .base .gauge.on{width: calc(0.70*594px);}
 .container_about .contents .core_container .intro .skill > ul .photoshop .base .gauge.on{width: calc(0.62*594px);}
-
+/* about animation*/
+@keyframes pic_bg{from{left : -200px; opacity: 0;} to{left : 0px; opacity: 1;}}
 
 /* work */
 .container_work{background: #fbfbfb; }
@@ -63,14 +66,12 @@ body {
 .container_work .contents .core .web .n1{left: 22%;}
 .container_work .contents .core .web .n3{left: 78%;}
 .container_work .contents .core .btn > a{display: block; position: absolute; top: 55%; z-index: 10;}
-.container_work .contents .core .btn > a.off{cursor: default;}
+.container_work .contents .core .btn > a.off{cursor: default; opacity: 0.2;}
 .container_work .contents .core .btn .btn_left{left: 130px; transform: translate(-50%, -50%);}
 .container_work .contents .core .btn .btn_right{right: 130px; transform: translate(50%, -50%);}
 .container_work .contents .core .bg{position: absolute; right: 0; bottom: -70px; font-family: 'Black Han Sans'; font-size: 12.5em; color: #f4f3f3; }
 
-
 /* text animation */
-
 
 /* contact */
 .container_contact{height: 350px; background: #4c4c4c;}

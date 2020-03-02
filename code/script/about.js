@@ -1,4 +1,5 @@
 // About page operation
+// TODO : all animation stop
 $(function(){
     var elm = $(".container_about"),
         per = elm.find(".base .gauge .percent > span");
