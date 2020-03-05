@@ -2,7 +2,7 @@
 $(function () {
     // TODO : <Simple>Code Simplification
     // TODO : button to edge
-
+    // TODO : PHP String binding
     var main = classObject("main"),
         about = classObject("about"),
         work = classObject("work"),

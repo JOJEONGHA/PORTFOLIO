@@ -4,7 +4,7 @@ $(function () {
     
     var elm = ".container.on",  // find container class had "on" 
         isMoving = false;   // Is it moving?
-
+    
     $(this).on("mousewheel DOMMouseScroll", function (e) {
         if(isMoving == false){
             isMoving = true;
@@ -27,7 +27,6 @@ $(function () {
                 // (Move)Mouse wheel up to down
                 if (elmSelecter.next().index() != -1) {
                     try { 
-                        console.log(elmSelecter.next().index());
                         moveTop =topPostion(elmSelecter,"next");
                     } catch (e) { }
                 }else{
@@ -45,7 +44,7 @@ $(function () {
                     _duration = 0;
                 }
             }
-            
+
             // View move
             $("html,body").stop().animate({
                 scrollTop: moveTop + 'px'
