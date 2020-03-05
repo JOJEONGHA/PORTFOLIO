@@ -61,15 +61,50 @@ body {
 .container_work .contents .core .web .weblist .work{position: absolute; transform: translate(-50%,-50%); top: 262.5px; transition : all 0.5s;}
 .container_work .contents .core .web .weblist .work.mid{height: 539px; width: 772px; z-index: 10;}
 .container_work .contents .core .web .weblist .work.lr{height: 421px; width: 503px;z-index: 5;opacity: 0.4;}
-.container_work .contents .core .web .weblist .work > a{display : block; height: 100%; position: relative;}
-.container_work .contents .core .web .weblist .work > a > img{width: 100%; height: auto; position : absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+.container_work .contents .core .web .weblist .work .work_container{height: 100%; position: relative; cursor: pointer;}
+.container_work .contents .core .web .weblist .work .work_container > img{width: 100%; height: auto; position : absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+.container_work .contents .core .web .weblist .work .work_container .web_container{height: 439px;width: 772px; position: absolute; opacity: 0; transition: opacity 0.5s; overflow: hidden; z-index: 5; left: 50%; top: 50%; transform: translate(-50%,-50%);}
+.container_work .contents .core .web .weblist .work.mid .work_container .web_container:hover{opacity: 1;}
+.container_work .contents .core .web .weblist .work.mid .work_container .web_container .bg{height: 100%; background: #000; opacity: 0.5; z-index: -10; position: absolute; width: 100%;}
+.container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web{width: 650px; height: 380px; position: absolute;}
+.container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .core{width: 49.5%; height: 100%; float: left;}
+.container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .core > ul{display: flex; flex-direction: column; height: 100%; }
+.container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .core > ul .contents{flex : 1; }
+.container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .left > ul .contents .title{font-size: 1.1em; padding: 20px 0 0 15px;}
+.container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .left > ul .contents span ~ span{font-size: 1.5em;}
+.container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .left > ul .contents > span{display: block; font-family: 'NanumBarunGothic', 'serif'; color:#fff; }
+.container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .left > ul .concept .title{padding-bottom: 20px;}
+.container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .left > ul .concept .text2 ,
+.container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .left > ul .contents > span ~ span{padding: 0 0 0 50px;} 
+.container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .left > ul .color .rcolor{padding: 15px 0 0 35px;}
+.container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .left > ul .color .rcolor > li{border-radius: 50px; width: 34px; height: 34px; background: #ede2cf; float: left; margin: 0 20px 0 0;}
+.container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .right > ul .btn{position: relative;}
+.container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .right > ul .btn > a {position: absolute; display: inline-block; width : 210px; height: 60px; font-family: 'NanumBarunGothic', 'serif'; color:#fff; font-size: 1.5em; text-align: center; line-height: 59px; border: 2px solid #a1a1a1; right : 170px;}
+
+/* animation */
+.container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .right > ul .btn > a:hover::after,
+.container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .right > ul .btn > a:hover::before{content: ""; display: block; width: 208px; position: absolute; z-index: 5;}
+.container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .right > ul .btn > a:hover::after{ border-right: 2px solid #fff; border-left: 2px solid #fff; top: -2px; left: -3px; animation: 0.8s btn_after; height: 60px;}
+.container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .right > ul .btn > a:hover::before{ border-top: 2px solid #fff; border-bottom: 2px solid #fff; left: -1px; top: -2px; animation: 0.8s btn_before; height: 56px;}
+@keyframes btn_after{0%{transform: scale(1,0);} 100%{transform: scale(1,1);}}
+@keyframes btn_before{0%{transform: scale(0,1);} 100%{transform: scale(1,1);}}
+.container_work .contents .core .web .weblist .work.mid .work_container .web_container:hover::after,
+.container_work .contents .core .web .weblist .work.mid .work_container .web_container:hover::before{content: ""; display: block; margin: 30px; width: 742px; height: 409px; position: absolute; animation : 1s web_line; z-index: -5;}
+.container_work .contents .core .web .weblist .work.mid .work_container .web_container:hover::after{border-left: 2px solid #fff; border-bottom: 2px solid #fff; left: -2.5%; top: -14px;}
+.container_work .contents .core .web .weblist .work.mid .work_container .web_container:hover::before{border-right: 2px solid #fff; border-top: 2px solid #fff; right: -2%; bottom: -18px;}
+@keyframes web_line{0%{width: 0; height: 0;} 50%{height: 409px; width: 0;} 100%{width: 742px;}}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
 .container_work .contents .core .web .n1{left: 22%;}
 .container_work .contents .core .web .n3{left: 78%;}
-.container_work .contents .core .btn > a{display: block; position: absolute; top: 55%; z-index: 10;}
-.container_work .contents .core .btn > a.off{cursor: default; opacity: 0.2;}
-.container_work .contents .core .btn .btn_left{left: 130px; transform: translate(-50%, -50%);}
-.container_work .contents .core .btn .btn_right{right: 130px; transform: translate(50%, -50%);}
-.container_work .contents .core .bg{position: absolute; right: 0; bottom: -70px; font-family: 'Black Han Sans'; font-size: 12.5em; color: #f4f3f3; }
+.container_work .contents .core > .btn > a{display: block; position: absolute; top: 55%; z-index: 10;}
+.container_work .contents .core > .btn > a.off{cursor: default; opacity: 0.2;}
+.container_work .contents .core > .btn .btn_left{left: 130px; transform: translate(-50%, -50%);}
+.container_work .contents .core > .btn .btn_right{right: 130px; transform: translate(50%, -50%);}
+.container_work .contents .core > .bg{position: absolute; right: 0; bottom: -70px; font-family: 'Black Han Sans'; font-size: 12.5em; color: #f4f3f3; }
 
 /* text animation */
 

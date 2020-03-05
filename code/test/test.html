@@ -7,68 +7,90 @@
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <title>JS Bin</title>
     <style>
-        .center {
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+        *{padding: 0; margin: 0;}
+        ul,li{list-style: none;}
+        .line{border: 1px solid red;}
+        /* Center Align(position : absolute) */
+        .align_center{top: 0; bottom: 0; left: 0; right: 0; margin: auto;}
+        a,
+        a:link,
+        a:visited,
+        a:hover {color: #000; text-decoration: none; display: block;}
 
-        p {
-            width: 70%;
-            font-size: 30px;
-            display: block;
-            text-align: center;
-        }
+        .web_container{height: 439px; width: 772px; position: relative; opacity: 0; transition: opacity 0.5s; overflow: hidden;}
+        .web_container:hover{opacity: 1;}
+        .web_container .bg{height: 100%; background: #000; opacity: 0.5; z-index: -10; position: absolute; width: 100%;}
+        .web_container .contents_web{width: 650px; height: 380px; position: absolute;}
+        .web_container .contents_web .core{width: 49.5%; height: 100%; float: left;}
+        .web_container .contents_web .core > ul{display: flex; flex-direction: column; height: 100%; }
+        .web_container .contents_web .core > ul .contents{flex : 1; }
+        .web_container .contents_web .left > ul .contents .title{font-size: 1.1em; padding: 20px 0 0 30px;}
+        .web_container .contents_web .left > ul .contents span ~ span{font-size: 1.5em;}
+        .web_container .contents_web .left > ul .contents > span{display: block; font-family: 'NanumBarunGothic', 'serif'; color:#fff; }
+        .web_container .contents_web .left > ul .concept .title{padding-bottom: 20px;}
+        .web_container .contents_web .left > ul .concept .text2 , span + span{padding: 0 0 0 50px;} 
+        .web_container .contents_web .left > ul .color .rcolor{padding: 15px 0 0 50px;}
+        .web_container .contents_web .left > ul .color .rcolor > li{border-radius: 50px; width: 34px; height: 34px; background: #ede2cf; float: left; margin: 0 20px 0 0;}
+        .web_container .contents_web .right > ul .btn{position: relative;}
+        .web_container .contents_web .right > ul .btn > a {position: absolute; display: inline-block; width : 210px; height: 60px; font-family: 'NanumBarunGothic', 'serif'; color:#fff; font-size: 1.5em; text-align: center; line-height: 59px; border: 2px solid #a1a1a1;}
 
-        .char {
-            font-size: 40px;
-            height: 40px;
-            animation: an 1s ease-out 1s both;
-            display: inline-block;
-        }
+        /* animation */
+        .web_container .contents_web .right > ul .btn > a:hover::after,a:hover::before{content: ""; display: block; position: absolute; height: 60px; width: 208px;  z-index: 5;}
+        .web_container .contents_web .right > ul .btn > a:hover::after{ border-right: 2px solid #fff; border-left: 2px solid #fff; top: 0%; left: -0.5%; animation: 0.8s btn_after;}
+        .web_container .contents_web .right > ul .btn > a:hover::before{ border-top: 2px solid #fff; border-bottom: 2px solid #fff; left: -13.5%; top: -53%; animation: 0.8s btn_before;}
+        @keyframes btn_after{0%{transform: scale(1,0);} 100%{transform: scale(1,1);}}
+        @keyframes btn_before{0%{transform: scale(0,1);} 100%{transform: scale(1,1);}}
+        .web_container:hover::after,:hover::before{content: ""; display: block; margin: 30px; width: 742px; height: 409px; position: absolute; animation : 1s web_line; z-index: -5;}
+        .web_container:hover::after{border-left: 2px solid #fff; border-bottom: 2px solid #fff; left: -2.5%; top: -3%;}
+        .web_container:hover::before{border-right: 2px solid #fff; border-top: 2px solid #fff; right: -2%; bottom: -3%;}
+        @keyframes web_line{0%{width: 0; height: 0;} 50%{height: 409px; width: 0;} 100%{width: 742px;}}
 
-        @keyframes an {
-            from {
-                opacity: 0;
-                transform: perspective(500px) translate3d(-35px, -40px, -150px) rotate3d(1, -1, 0, 35deg);
-            }
-
-            to {
-                opacity: 1;
-                transform: perspective(500px) translate3d(0, 0, 0);
-            }
-        }
     </style>
 </head>
 
 <body>
-    <div class="center">
-        <p id="text">기존의 혁신적인 구조를 좀더 유기적인 구조로 변경하여 상큼한 느낌을 적용.</p>
-            <!-- <p id="text">서광주세무서</p> -->
-                        <!-- <p class="text">기존의 혁신적인 구조를 좀더 유기적인 구조로 변경하여 상큼한 느낌을 적용.</p> -->
+    <div class = "web_container ">
+        <!-- a tag 시작 -->
+        <div class="contents_web align_center">
+            <div class="left core ">
+                <ul>
+                    <li class="concept contents ">
+                        <span class="title">Keyword</span>
+                        <span class="text">word word</span>
+                    </li>
+                    <li class="color contents ">
+                        <span class="title">Color</span>
+                        <ul class="rcolor">
+                            <li class="ty1"></li>
+                            <li class="ty2"></li>
+                            <li class="ty3"></li>
+                            <!-- 추가 여부 -->
+                        </ul>
+                    </li>
+                    <li class="font contents ">
+                        <span class="title">Font</span>
+                        <span class="text1"> - NanumBarunGothic</span>
+                        <span class="text2"> - Caliar</span>
+                        <!-- 추가 여부 -->
+                    </li>
+                </ul>
+            </div>
+            <div class="right core ">
+                <ul>
+                    <li class = "btn contents ">
+                        <a href="javascript:void(0)" class="align_center">View</a>
+                    </li>
+                    <li class = "btn contents ">
+                        <a href="javascript:void(0)" class="align_center">Detail</a>
+                    </li>
+                    <li class = "btn contents ">
+                        <a href="javascript:void(0)" class="align_center">Original</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bg"></div>
     </div>
-    <script>
-        var text = document.getElementById('text');
-        var newDom = '';
-        var animationDelay = 6;
-
-        for(let i = 0; i < text.innerText.length; i++)
-        {
-            newDom += '<span class="char">' + (text.innerText[i] == ' ' ? '&nbsp;' : text.innerText[i])+ '</span>';
-        }
-        console.log(newDom);
-
-        text.innerHTML = newDom;
-        var length = text.children.length;
-
-        for(let i = 0; i < length; i++)
-        {
-            text.children[i].style['animation-delay'] = animationDelay * i + 'ms';
-        }
-    
-    </script>
 </body>
 
 </html>

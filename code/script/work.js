@@ -8,16 +8,20 @@ $(function () {
         contactP = $(".container_contact");
     var elm = $(".container_work .contents .core");
     var weblist = elm.find(".web .weblist"),
-        amount = 5,
-        tags = ""; // web list amount
-    // Add web tag
-    for(var i = 0; i < amount; i++){
-        var tag = "<li class = 'works_" + i + " work'><a href = 'javascript:void(0)'>";
-            tag += "<img src='img/weblist/index_" + i +".png' alt = 'index_" + i +"'></a></li>";
-        tags += tag;
-    }
-    weblist.html(tags);
-
+        amount = 5; // web list amount (Control amount)
+        
+    // // Add web tag
+    // for(var i = 1; i < amount; i++){
+    //     var tag = "<li class = 'works_" + i + " work'><a href = 'javascript:void(0)'>";
+    //         tag += "<img src='img/weblist/index_" + i +".png' alt = 'index_" + i +"'>"
+    //         tag += "";  // Add tag
+    //         tag += "</a></li>";
+    //     // tags += tag;
+    //     weblist.append(tag);
+    //     // 기존의 것에 Add inner string 
+        
+    // }
+    
     // Initialization
     // Init - position
     var lefts = [],
