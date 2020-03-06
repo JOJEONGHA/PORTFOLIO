@@ -1,3 +1,6 @@
+/* test */
+.line{border : 1px solid red}
+
 /* body */
 body {
     overflow: hidden;/* Hide scrollbars */
@@ -11,14 +14,16 @@ body {
 .container_main{background: #ebebeb;}
 .container_main .logo > img{height: 35px; position: absolute; left: 50px; top: calc(0.063*100vh);}
 .container_main .contents .bg {z-index: -10;}
-.container_main .contents .bg > img{height: calc(0.75*100vh);  display: block; position: absolute; bottom: 20px; left: 50%; transform: translate(-50%, 0);}
+.container_main .contents .bg > img,
+.container_main .contents .stationery{position: absolute; bottom: -35%; left: 50%; transform: translate(-50%, -50%);}
+.container_main .contents .bg > img{display: block; height: calc(0.75*100vh);}
+.container_main .contents .stationery{background: url("../img/main_bg_white.png") no-repeat 0 0; background-size: cover; background-position: 0 90%;}
+.container_main .contents .stationery .text{position: absolute; font-family: 'Changa One', cursive; font-size: calc(0.1*100vh); white-space: nowrap;}
 .container_main .menu .menuset{position: absolute; top: calc(0.08*100vh); right: 34px; z-index: 10;}
 .container_main .menu .menuset > li{float : left;  }
 .container_main .menu .menuset > li > a{display: block; padding: 0 19px; color: #c5c5c5; font-family: Arial, Helvetica, sans-serif; font-size: 1.4em;}
 .container_main .menu .menuset > li:last-child > a{padding-right: 16px;}
 .container_main .menu .menuset > li.on > a{color: #868686;}
-.container_main .contents .stationery{ position: absolute; top : 50%; left: 50%; transform: translate(-50%, -50%);}
-.container_main .contents .stationery > img{height: calc(0.095*100vh);}
 
 /* about >>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 .container_about{background: #fbfbfb;}
