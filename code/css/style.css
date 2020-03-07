@@ -17,9 +17,10 @@ body {
 .container_main .contents .bg > img,
 .container_main .contents .stationery{position: absolute; bottom: -35%; left: 50%; transform: translate(-50%, -50%);}
 .container_main .contents .bg > img{display: block; height: calc(0.75*100vh);}
-.container_main .contents .stationery{background: url("../img/main_bg_white.png") no-repeat 0 0; background-size: cover; background-position: 0 90%;}
-.container_main .contents .stationery .text_animation {position: absolute; overflow: hidden;left: -15%; top: 34%; width: calc(1.7*100vh);}
-.container_main .contents .stationery .text_animation > div{display: inline-block; overflow: hidden; white-space: nowrap; }
+.container_main .contents .stationery{background: url("../img/main_bg_white.png") no-repeat 0 0; background-size: cover; background-position: 0 90%; -webkit-background-clip: text;  
+  background-clip: text; color: transparent; }
+.container_main .contents .stationery .text_animation {position: absolute; overflow: hidden;left: -15%; top: 34%; width: calc(1.7*100vh); }
+.container_main .contents .stationery .text_animation > div{display: inline-block; overflow: hidden; white-space: nowrap;}
 .container_main .contents .stationery .text_animation > div:nth-child(1){animation: text_ani_n1 7s; }
 .container_main .contents .stationery .text_animation > div:nth-child(2) > span{animation: text_ani_n2 7s;}
 .container_main .contents .stationery > div .text{font-family: 'Changa One', cursive; font-size: calc(0.105*100vh); }

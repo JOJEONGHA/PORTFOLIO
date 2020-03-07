@@ -9,17 +9,20 @@
     <style>
         @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700);
         .box{
+            height: 500px;
             font-family: 'Open Sans', sans-serif;
             font-size: 80px;
             font-weight: 800;
             line-height: 60px;
             background: url("../img/main_bg.png") no-repeat 0 0;
-            background-position: 0 0;
+            background-position: -45px -160px;
             -webkit-background-clip: text;  
             background-clip: text;
             color: transparent;
+            position: relative;
         }
-        h1{font-size: 32px; color: #444; font-family: Source Sans Pro, Arial, sans-seirf;}
+
+        .box>div{position: absolute; left: -15%; top: 34%; width: calc(1.7*100vh); overflow: hidden;}
 
     </style>
 </head>
@@ -28,8 +31,10 @@
     <div class="container">
         <h1>Image Masking</h1>
         <div class="box">
-            <div>HELLO WORLD</div>
-            <div><h2>MASKING TEXT EXAMPLE</h2></div>
+            <div>
+                <div><span>HELLO WORLD</span> </div>
+                <div><span>MASKING TEXT EXAMPLE</span></div>
+            </div> 
         </div>
         
     </div>
