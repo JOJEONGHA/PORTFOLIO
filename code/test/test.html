@@ -19,10 +19,11 @@
             -webkit-background-clip: text;  
             background-clip: text;
             color: transparent;
-            position: relative;
+            position: absolute;
         }
 
-        .box>div{position: absolute; left: -15%; top: 34%; width: calc(1.7*100vh); overflow: hidden;}
+        .box>div{ overflow: hidden; width: calc(1.7*100vh); margin-top: 220px;}
+        .box>div>div{display: block; overflow: hidden; white-space: nowrap; float: left;}
 
     </style>
 </head>

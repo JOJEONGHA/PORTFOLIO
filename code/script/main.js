@@ -1,6 +1,5 @@
 // Main page operation
 $(function () {
-    // TODO : <Simple>Code Simplification
     // TODO : button to edge
     // TODO : PHP String binding
 
@@ -20,41 +19,26 @@ $(function () {
     })
 
     // Menu text click event
-    var moveTop = 0;
-    main.click(function () {
-        var page = $(".container_main");
-        $(".container").removeClass("on");
-        page.addClass("on");
-        moveTop = page.offset().top;
-        $("html,body").stop().animate({ scrollTop: moveTop + 'px' },1000)
-    });
-    about.click(function () {
-        var page = $(".container_about");
-        $(".container").removeClass("on");
-        page.addClass("on");
-        moveTop = page.offset().top;
-        $("html,body").stop().animate({ scrollTop: moveTop + 'px' },1000)
-    });
-    work.click(function () {
-        var page = $(".container_work");
-        $(".container").removeClass("on");
-        page.addClass("on");
-        moveTop = page.offset().top;
-        $("html,body").stop().animate({ scrollTop: moveTop + 'px' },1000)
-    });
-    contact.click(function () {
-        var page = $(".container_contact");
-        $(".container").removeClass("on");
-        page.addClass("on");
-        moveTop = page.offset().top;
-        $("html,body").stop().animate({ scrollTop: moveTop + 'px' },1000)
-    });
+    main.click(function () {clickAction("main")});
+    about.click(function () {clickAction("about")});
+    work.click(function () {clickAction("work")});
+    contact.click(function () {clickAction("contact")});
 
     // Run when scrolling
-    $(this).on("mousewheel DOMMouseScroll", function (e) {
-
+    $(window).scroll(function(){
     })
 })
+
+// Menu text click action
+function clickAction(str){
+    var container = ".container_"+ str;
+    var page = $(container);
+
+    $(".container").removeClass("on");
+    page.addClass("on");
+    var moveTop = page.offset().top;
+    $("html,body").stop().animate({ scrollTop: moveTop + 'px' },1000)
+}
 
 // Return a specific Menu object
 function classObject(str) {
