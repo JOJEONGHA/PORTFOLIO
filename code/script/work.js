@@ -12,13 +12,14 @@ $(function () {
         var web_container = weblist.find(".work .work_container .web_container").html();
         var tag = "<li class='works_"+ i +" work'>";
             tag += "<div class = 'work_container'>";
+            tag += "<figure>";
             tag += "<img src='img/weblist/index_" + i + ".png' alt='index_"+ i +"'></img>";
+            tag += "</figure>";
             tag += "<div class='web_container'>"
             tag += web_container;
             tag += "</div></div></li>";
         weblist.append(tag);
     }    
-    // 할때 마다 넣고
 
     // Initialization
     // Init - position
