@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto:300');
+        @import url(https://fonts.googleapis.com/css?family=Changa+One|Dosis&display=swap);
+        body {
+        text-align:center;
+        background:linear-gradient(141deg, #ccc 25%, #eee 40%, #ddd 55%);
+        color:#555;
+        font-family: 'Changa One', cursive; font-size: calc(0.12*100vh);
+        font-weight:300;
+        font-size:calc(0.12*100vh);
+        padding-top:40vh;
+        height:100vh;
+        /* overflow:hidden; */
+        }
+
+        div {
+        display:inline-block;
+        overflow:hidden;
+        white-space:nowrap;
+        }
+
+        div:last-of-type {
+        width:700px;
+        animation: reveal 20s;
+        }
+
+        div:last-of-type span {
+        animation: slidein 20s;
+        }
+
+        @keyframes slidein {
+            20% { margin-left:-800px; }
+            35% { margin-left:0px; }
+        }
+
+        @keyframes reveal {
+            0% {opacity:0;width:0px;}
+            20% {opacity:1;width:0px;}
+            30% {width:700px;}
+        }
+    </style>
+</head>
+<body>
+    <div><span>Not Wrong</span></div> 
+    <div> 
+        <span>,&ensp;Just different</span>
+    </div>
+</body>
+</html>

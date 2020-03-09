@@ -1,5 +1,0 @@
-(완)1. 새로고침시 시작페이지로
-
-(완)02. percentage animation
-
-3. work page에서 좌우가 존재시에 버튼 존재유무

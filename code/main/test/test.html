@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <title>JS Bin</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700);
+        .box{
+            height: 500px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 80px;
+            font-weight: 800;
+            line-height: 60px;
+            background: url("../img/main_bg.png") no-repeat 0 0;
+            background-position: -45px -160px;
+            -webkit-background-clip: text;  
+            background-clip: text;
+            color: transparent;
+            position: absolute;
+        }
+
+        .box>div{ overflow: hidden; width: calc(1.7*100vh); margin-top: 220px;}
+        .box>div>div{display: block; overflow: hidden; white-space: nowrap; float: left;}
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Image Masking</h1>
+        <div class="box">
+            <div>
+                <div><span>HELLO WORLD</span> </div>
+                <div><span>MASKING TEXT EXAMPLE</span></div>
+            </div> 
+        </div>
+        
+    </div>
+</body>
+
+</html>
