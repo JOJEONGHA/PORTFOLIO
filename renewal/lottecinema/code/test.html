@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{height: 200px; width: 200px; float: left;}
+        
+        .container:nth-child(2){background:cyan; float: none;}
+
+        @media (max-width: 1200px){            
+            .box.container{background: red;}
+        }
+    </style>
+</head>
+<body>
+    <container>
+        <div class="test"></div>
+        <div class="container box">1</div>
+    </container>
+</body>
+</html>

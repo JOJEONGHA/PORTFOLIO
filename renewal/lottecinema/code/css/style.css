@@ -1,0 +1,37 @@
+/* body */
+body {overflow: hidden;}/* Hide scrollbars */
+
+/* all */
+.container{width: 100%; max-width: 1200px; min-height: 500px;  margin: 0 auto;}
+.contents_container{padding: 0 16px 0 16px;}
+
+/* main_movie_container */
+.main_movie_container .main_movie_contents{overflow: hidden; float: left; width: 100%;}
+.main_movie_container .main_movie_contents .movie_info{width: 83.22%; height: 547px;  margin: 0 0 13px 16.78%; float: left;}
+.main_movie_container .main_movie_contents .movie_container{width: 15.84%; height: 268px; float: left;}
+.main_movie_container .main_movie_contents .movie_container:nth-child(n+2):not(:nth-child(n+4)){margin: 0 0 13px 0; float: none;}
+.main_movie_container .main_movie_contents .movie_container:nth-child(n+5){margin: 0 0 0 0.992%;}
+.main_movie_container .main_movie_contents .movie_container:nth-child(10){display: none;}
+
+/* responsive main_movie_container*/
+@media (max-width : 1200px){    /* tablet */
+    .main_movie_container .main_movie_contents .movie_info{margin: 0 0 13px 0; width: 100%;}
+    .main_movie_container .main_movie_contents .movie_container{height: 268px;}
+    .main_movie_container .main_movie_contents .movie_container:nth-child(n+2):not(:nth-child(n+4)){float: left; margin: 0;}
+    .main_movie_container .main_movie_contents .movie_container:nth-child(3){margin: 0 0 0 0.992%;}
+    .main_movie_container .main_movie_contents .movie_container + .movie_container{margin: 0 0 0 0.992%;}
+    .main_movie_container .main_movie_contents .movie_6,
+    .main_movie_container .main_movie_contents .movie_7{display: none;}
+}
+
+@media (max-width : 600px){
+    .main_movie_container .main_movie_contents .movie_info{display: none;}
+    .main_movie_container .main_movie_contents .row,
+    .main_movie_container .main_movie_contents .col + .col{margin: 0;}
+    .main_movie_container .main_movie_contents .movie_container + .movie_container{margin: 0;}
+    .main_movie_container .main_movie_contents .movie_container{width: 32%; margin: 0 0 0 10px;}
+    /* .main_movie_container .main_movie_contents .movie_container:nth-child(3n){margin: 0 0.5% 0 0.5%;} */
+    .main_movie_container .main_movie_contents .movie_6,
+    .main_movie_container .main_movie_contents .movie_7,
+    .main_movie_container .main_movie_contents .movie_8{display: block;}
+}
