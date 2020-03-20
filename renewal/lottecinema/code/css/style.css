@@ -60,10 +60,9 @@ body::-webkit-scrollbar {
 
 /* event_preview_container */
 .event_preview_container{}
-.event_preview_container .title_line_wrapper{height: 61px; line-height: 60px; text-align: center; position : relative;}
-.event_preview_container .title_line_wrapper{}
-.event_preview_container .title_line_wrapper > span{color: #4d4d4d; vertical-align: top;}
+.event_preview_container .title_line_wrapper{height: 61px; line-height: 60px; text-align: center;}
+.event_preview_container .title_line_wrapper > span{display: inline-block; color: #4d4d4d; vertical-align: top;  position : relative;}
 .event_preview_container .title_line_wrapper > span::before,
 .event_preview_container .title_line_wrapper > span::after{content: ""; display: block; width: 50vw; height: 1px; background: #4d4d4d; position: absolute; top: 0; bottom: 0; margin: auto 0;}
-.event_preview_container .title_line_wrapper > span::before{right: -100%;}
-.event_preview_container .title_line_wrapper > span::after{left: -100%;}
+.event_preview_container .title_line_wrapper > span::before{right: 125px;}
+.event_preview_container .title_line_wrapper > span::after{left: 125px;}
