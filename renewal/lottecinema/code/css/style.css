@@ -1,13 +1,29 @@
 /* body */
 /* Hide scrollbars */
 /* body {overflow: hidden;} */
-
+body{
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
 /* all */
-.out_container{width: 100%; max-width: 1200px; margin: 0 auto;}
-.out_container .mid_container{max-width: 1183px; margin: 0 auto;}
+.container{background: #000; font-family: 'Noto Sans KR', sans-serif; overflow: hidden;}
+.container .out_container{width: 100%; max-width: 1200px; margin: 0 auto;}
+.container .out_container .mid_container{max-width: 1183px; margin: 0 auto;}
 
 /* main_menu_container */
-.main_menu_container{height: 139.5px;}
+.main_menu_container .main_menu_contents{padding: 1% 0 1% 0;}
+.main_menu_container .main_menu_contents .logo_menu{height: 59px; position: relative;}
+.main_menu_container .main_menu_contents .logo_menu > img{width: 172px; position: absolute;}
+.main_menu_container .main_menu_contents .main_menu{height: 51px;}
+.main_menu_container .main_menu_contents .main_menu .main_menuSet{display: block; height: 100%; max-width: 764px; margin: 0 auto;}
+.main_menu_container .main_menu_contents .main_menu .main_menuSet > li{display: inline-block; width: 13.599%; height: 100%; position: relative;}
+.main_menu_container .main_menu_contents .main_menu .main_menuSet > li > a{display: block; width: 100%; height: 100%;}
+.main_menu_container .main_menu_contents .main_menu .main_menuSet > li > a > span{position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+    letter-spacing: 2px; color: #fff;}
+.main_menu_container .main_menu_contents .main_menu .main_menuSet > li > a > .vip{font-family: 'Anton', sans-serif; font-size: 1.625rem;}
 
 /* main_movie_container */
 .main_movie_container .main_movie_contents{padding-bottom: 71%; height: 0;}
@@ -22,7 +38,7 @@
 .main_movie_container .main_movie_contents .movieSet .movie_1{float: none;}
 .main_movie_container .main_movie_contents .movieSet .movie_8{display: none;}
 
-@media (max-width : 1200px){    /* tablet */
+@media (max-width : 1024px){    /* tablet */
     .main_movie_container .main_movie_contents{padding-bottom: 80%;}
     .main_movie_container .main_movie_contents .movie_info{width: 100%; margin-left: 0;}
     .main_movie_container .main_movie_contents .movieSet .movie_0,
@@ -32,7 +48,7 @@
 }
 
 /* not zoom, another effect */
-@media (max-width : 600px){
+@media (max-width : 680px){
     .main_movie_container .main_movie_contents{padding-bottom: 142%;}
     .main_movie_container .main_movie_contents .movie_info{display: none;}
     .main_movie_container .main_movie_contents .movieSet .movie_container{width: 33.33%; float: left;}
@@ -41,3 +57,13 @@
     .main_movie_container .main_movie_contents .movieSet .movie_8 {display: block;}
     .main_movie_container .main_movie_contents .movieSet .movie_container .movie_wrapper .movie > a > img{width: 100%;}
 }
+
+/* event_preview_container */
+.event_preview_container{}
+.event_preview_container .title_line_wrapper{height: 61px; line-height: 60px; text-align: center; position : relative;}
+.event_preview_container .title_line_wrapper{}
+.event_preview_container .title_line_wrapper > span{color: #4d4d4d; vertical-align: top;}
+.event_preview_container .title_line_wrapper > span::before,
+.event_preview_container .title_line_wrapper > span::after{content: ""; display: block; width: 50vw; height: 1px; background: #4d4d4d; position: absolute; top: 0; bottom: 0; margin: auto 0;}
+.event_preview_container .title_line_wrapper > span::before{right: -100%;}
+.event_preview_container .title_line_wrapper > span::after{left: -100%;}

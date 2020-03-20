@@ -1,7 +1,5 @@
 /* font */
-@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
-@import url(https://fonts.googleapis.com/css?family=Changa+One|Dosis&display=swap);
-@import url(https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Anton|Noto+Sans+KR&display=swap);
 
 .testline{border: 1px solid #f00;}
 .testcolor{background: #9AD9A3;}
