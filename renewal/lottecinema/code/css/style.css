@@ -57,12 +57,19 @@ body::-webkit-scrollbar {
     .main_movie_container .main_movie_contents .movieSet .movie_8 {display: block;}
     .main_movie_container .main_movie_contents .movieSet .movie_container .movie_wrapper .movie > a > img{width: 100%;}
 }
-
+ 
 /* event_preview_container */
-.event_preview_container{}
 .event_preview_container .title_line_wrapper{height: 61px; line-height: 60px; text-align: center;}
 .event_preview_container .title_line_wrapper > span{display: inline-block; color: #4d4d4d; vertical-align: top;  position : relative;}
 .event_preview_container .title_line_wrapper > span::before,
 .event_preview_container .title_line_wrapper > span::after{content: ""; display: block; width: 50vw; height: 1px; background: #4d4d4d; position: absolute; top: 0; bottom: 0; margin: auto 0;}
 .event_preview_container .title_line_wrapper > span::before{right: 125px;}
 .event_preview_container .title_line_wrapper > span::after{left: 125px;}
+.event_preview_container .event_preview_wrapper{padding-bottom: 41%; position: relative;}
+.event_preview_container .event_preview_wrapper .event_preview_contents{position: absolute; width: 100%; height: 100%;}
+.event_preview_container .event_preview_wrapper .event_preview_contents > div{height: 100%; float: left; position: relative;}
+.event_preview_container .event_preview_wrapper .event_preview_contents .preview_ty2{width: 67%;}
+.event_preview_container .event_preview_wrapper .event_preview_contents .preview_ty1{width: 83.5%;}
+.event_preview_container .event_preview_wrapper .event_preview_contents .preview_ty0{width: 100%;}
+.event_preview_container .event_preview_wrapper .event_preview_contents .event{width : 16.5%;}
+.event_preview_container .event_preview_wrapper .event_preview_contents > div > a > img{height: 97%; position: absolute;}
