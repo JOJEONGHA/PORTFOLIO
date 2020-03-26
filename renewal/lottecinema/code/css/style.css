@@ -17,20 +17,22 @@ body::-webkit-scrollbar {
 .main_menu_container .main_menu_contents{padding: 1% 0 1% 0; position: relative; z-index: 5;}
 .main_menu_container .main_menu_contents .logo_menu{height: 59px; position: relative; }
 .main_menu_container .main_menu_contents .logo_menu > a > img{width: 172px; position: absolute; top : 55%;}
-.main_menu_container .main_menu_contents .main_menu{height: 51px; position: relative;}
-.main_menu_container .main_menu_contents .main_menu .main_menuSet{padding: 0 20% 0;}
-.main_menu_container .main_menu_contents .main_menu .main_menuSet > li{display: inline-block; width: 13.599%; height: 100%; position: relative;}
-.main_menu_container .main_menu_contents .main_menu .main_menuSet > li > a{display: block; width: 100%; height: 100%;}
-.main_menu_container .main_menu_contents .main_menu .main_menuSet > li > a > span{position: absolute; display: block; left: 50%; top: 50%; transform: translate(-50%,-50%);
+.main_menu_container .main_menu_contents .main_menu_wrapper{height: 51px;}
+.main_menu_container .main_menu_contents .main_menu_wrapper .main_menu{height: 51px; position: relative; width: 100%; z-index: 5; max-width: 1183px;}
+.main_menu_container .main_menu_contents .main_menu_wrapper .main_menu .bg_main_menu{width: 100%; height: 100%; background: #000; position: absolute; top: 0; z-index: -5;}
+.main_menu_container .main_menu_contents .main_menu_wrapper .main_menu .main_menuSet{padding: 0 20% 0;}
+.main_menu_container .main_menu_contents .main_menu_wrapper .main_menu .main_menuSet > li{display: inline-block; width: 13.599%; height: 100%; position: relative;}
+.main_menu_container .main_menu_contents .main_menu_wrapper .main_menu .main_menuSet > li > a{display: block; width: 100%; height: 100%;}
+.main_menu_container .main_menu_contents .main_menu_wrapper .main_menu .main_menuSet > li > a > span{position: absolute; display: block; left: 50%; top: 50%; transform: translate(-50%,-50%);
     letter-spacing: 2px; color: #fff; white-space: nowrap;}
-.main_menu_container .main_menu_contents .main_menu .main_menuSet > li:hover::after{content: ""; display: block; position: absolute; left: 50%; top: 22px; height: 5px; width: 55px; background: #d32f2f;transform: translateX(-50%);}
-.main_menu_container .main_menu_contents .main_menu .main_menuSet > li > a > .vip{font-family: 'Anton', sans-serif; font-size: 1.625rem;}
-.main_menu_container .main_menu_contents .main_menu .main_menuSet .side_menu{position: absolute; top: 20%; right: -12%; display: none;}
-.main_menu_container .main_menu_contents .main_menu .pop_menu{position: absolute; width: 100%; height: 27px; top: 58px; overflow: hidden;}
-.main_menu_container .main_menu_contents .main_menu .pop_menu .menu_list{height: 100%; left: 50%; position: absolute; transform: translateX(-50%); z-index: 5;}
-.main_menu_container .main_menu_contents .main_menu .pop_menu .menu_list > li{display: inline-block;}
-.main_menu_container .main_menu_contents .main_menu .pop_menu .menu_list > li > a > span{color: #777676; font-weight: 600; padding: 0 12px 0;}
-.main_menu_container .main_menu_contents .main_menu .pop_menu .bg_pop_menu{height: 100%; background: #000; opacity: 0.6;}
+.main_menu_container .main_menu_contents .main_menu_wrapper .main_menu .main_menuSet > li:hover::after{content: ""; display: block; position: absolute; left: 50%; top: 22px; height: 5px; width: 55px; background: #d32f2f;transform: translateX(-50%);}
+.main_menu_container .main_menu_contents .main_menu_wrapper .main_menu .main_menuSet > li > a > .vip{font-family: 'Anton', sans-serif; font-size: 1.625rem;}
+.main_menu_container .main_menu_contents .main_menu_wrapper .main_menu .main_menuSet .side_menu{position: absolute; top: 20%; right: -12%; display: none;}
+.main_menu_container .main_menu_contents .main_menu_wrapper .main_menu .pop_menu{position: absolute; width: 100%; height: 27px; top: 51px; overflow: hidden;}
+.main_menu_container .main_menu_contents .main_menu_wrapper .main_menu .pop_menu .menu_list{height: 100%; left: 50%; position: absolute; transform: translateX(-50%); z-index: 5;}
+.main_menu_container .main_menu_contents .main_menu_wrapper .main_menu .pop_menu .menu_list > li{display: inline-block;}
+.main_menu_container .main_menu_contents .main_menu_wrapper .main_menu .pop_menu .menu_list > li > a > span{color: #777676; font-weight: 600; padding: 0 12px 0;}
+.main_menu_container .main_menu_contents .main_menu_wrapper .main_menu .pop_menu .bg_pop_menu{height: 100%; background: #000; opacity: 0.6;}
 .main_menu_container .main_menu_contents .side_menu{position: absolute; display: none;}
 
 @media (max-width : 1024px){    /* tablet */
