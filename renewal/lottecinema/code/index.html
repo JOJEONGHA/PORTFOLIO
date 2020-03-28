@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="jquery.scrollify.js"></script>
     <link rel="stylesheet" href="css/path.css" type="text/css">
     <title>lotte</title>
 </head>
@@ -49,8 +51,16 @@
                                 </div>
                                 <div class="side_pop_menu">
                                     <ul class="side_pop_set">
+                                        <li class = "pop_menu_exit"></li>
                                         <li><a href="javascript:void(0)"><span>예매</span></a></li>
-                                        <li><a href="javascript:void(0)"><span>영화</span></a></li>
+                                        <li><a href="javascript:void(0)"><span>영화</span></a>
+                                            <ul class="side_dept2_set">
+                                                <li><a href="javascript:void(0)"><span>현재상영작</span></a></li>
+                                                <li><a href="javascript:void(0)"><span>상영예정작</span></a></li>
+                                                <li><a href="javascript:void(0)"><span>아르떼</span></a></li>
+                                                <li><a href="javascript:void(0)"><span>오페라</span></a></li>
+                                            </ul>
+                                        </li>
                                         <li><a href="javascript:void(0)"><span>영화관</span></a></li>
                                         <li><a href="javascript:void(0)"><span>이벤트</span></a></li>
                                         <li><a href="javascript:void(0)"><span>스토어</span></a></li>
@@ -172,10 +182,24 @@
                                         </div>
                                     </div>
                                 </li>
+                                <!-- <li class="movie_container">
+                                    <div class="movie_wrapper">
+                                        <div class="movie">
+                                            <a href="javascript:void(0)">
+                                                <img src="img/movie/movie_7.png" alt="지푸라기라도 잡고싶은 짐승들" class="align_center">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li> -->
                             </ul>
+                            <div class="more_movie_container">
+                                <div class="more_btn">
+                                    <a href="javascript:void(0)" class="scroll"></a> </div>
+                                </div>
+                            </div>
                         </div>
                     </section>
-                    <section class = "event_preview_container">
+                    <section class = "event_preview_container"> 
                         <div class="title_line_wrapper">
                             <span>예고편 &amp; 이벤트</span>
                         </div>
@@ -249,7 +273,7 @@
                             </div>
                             <div class="bg_footer"></div>
                         </div>
-                    </footer>
+                    </footer> -->
                 </div>
             </div>
         </div>
