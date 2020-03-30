@@ -58,7 +58,7 @@ span{white-space:nowrap;}
 }
 
 /* main_movie_container */
-.main_movie_container .main_movie_contents{padding-bottom: 78%; height: 0; overflow: hidden;}
+.main_movie_container .main_movie_contents{padding-bottom: 79%; height: 0; overflow: hidden; position: relative;}
 .main_movie_container .main_movie_contents .movie_info{width: 83.26%; margin-left: 16.74%; float: left;}
 .main_movie_container .main_movie_contents .movie_info .info_wrapper{padding-bottom: 56.55%; position: relative;}
 .main_movie_container .main_movie_contents .movie_info .info_wrapper .info_contents{position: absolute; height: 99%; width: 99%; }
@@ -73,18 +73,21 @@ span{white-space:nowrap;}
 .main_movie_container .main_movie_contents .movie_info .info_wrapper .info_contents .main_contents > button{border: none; padding : 1.6% 9.69%; color: #fff; background: #d32f2f; border-radius: 50px; cursor: pointer;}
 .main_movie_container .main_movie_contents .movie_info .info_wrapper .info_contents .main_contents > button:active{outline: 0; border: none;}
 .main_movie_container .main_movie_contents .movie_info .info_wrapper .info_contents .bg_info{position: absolute; width: 100%; height: 100%; background: url("../img/movie/info_movie_7.png") no-repeat 0 0; background-size: cover; top: 0; z-index: -5;}
-.main_movie_container .main_movie_contents .more_movie_container{padding-top: 25%; }
-.main_movie_container .main_movie_contents .more_movie_container .more_btn{display:block; position:relative; color: #4d4d4d; margin: auto;}
-.main_movie_container .main_movie_contents .more_movie_container .more_btn::after{content: ""; width: 20px; height: 20px; position: absolute; top: 0; margin: auto; right: 0; left: 0; animation:3s arrow infinite ease; border-left: 1px solid #4d4d4d;; border-bottom: 1px solid #4d4d4d;; transform: rotate(-45deg);}
-.main_movie_container .main_movie_contents .more_movie_container .more_btn > a{color: #4d4d4d;}
-@keyframes arrow {
-	0%,100% {
-		top:0px;
-	}
-	50% {
-		top:20px;
-	}
-}
+
+.main_movie_container .main_movie_contents .more_movie_container{position: absolute; height: 8%; width: 100%; bottom: 0;}
+.main_movie_container .main_movie_contents .more_movie_container .more_btn_wrapper{padding-bottom: 7%; width: 7%; margin: 0 auto;}
+.main_movie_container .main_movie_contents .more_movie_container .more_btn_wrapper > a{display: block; position: absolute; width: 5%; height: 79.13%;}
+.main_movie_container .main_movie_contents .more_movie_container .more_btn_wrapper > a .arrow{position: absolute; top: 0%; left: 50%; transform: translate(-50%,-50%);}
+.main_movie_container .main_movie_contents .more_movie_container .more_btn_wrapper > a .arrow > span{display: block; width: 30px; height: 30px; border-bottom: 5px solid #06A8FF; border-right: 5px solid #06A8FF; transform: rotate(45deg); margin: -10px;animation: add_btn_arrow 2s infinite;}
+.main_movie_container .main_movie_contents .more_movie_container .more_btn_wrapper > a .arrow > span:nth-child(2){ animation-delay: -0.2s;}
+@keyframes add_btn_arrow{0%{opacity: 0;transform: rotate(45deg) translate(-10px,-10px);} 50%{opacity: 1;} 100%{opacity: 0; transform: rotate(45deg) translate(10px,10px);}}
+
+/* .main_movie_container .main_movie_contents .more_movie_container .more_btn_wrapper > a{display: block; position: absolute; width: 5%; height: 79.13%; border: 1px solid #000; border-radius: 50px; overflow: hidden;}
+.main_movie_container .main_movie_contents .more_movie_container .more_btn_wrapper > a >span{position: absolute; display: block; color: #fff; font-size: 3rem; top: 43%; left: 50%; transform: translate(-50%,-50%);}
+.main_movie_container .main_movie_contents .more_movie_container .more_btn_wrapper > a::before{content: ""; display: block; position: absolute; left: 50%; top: 50%; width: 100px; height: 100px; transform: translate(-50%,-50%) rotate(-45deg);}
+.main_movie_container .main_movie_contents .more_movie_container .more_btn_wrapper > a:hover::before{background: #d32f2f; animation: 0.4s linear add_btn;} */
+/* @keyframes add_btn{0%{height : 0px;}100%{height: 100px;} } */
+
 .main_movie_container .main_movie_contents .movieSet .movie_container{width: 16.665%; float: left;}
 .main_movie_container .main_movie_contents .movieSet .movie_container .movie_wrapper{padding-bottom: 141.493%; position: relative;}
 .main_movie_container .main_movie_contents .movieSet .movie_container .movie_wrapper .movie{position: absolute; width: 100%; height : 100%;}
@@ -95,24 +98,28 @@ span{white-space:nowrap;}
 .main_movie_container .main_movie_contents .movieSet .movie_8{display: none;}
 
 @media (max-width : 1024px){    /* tablet */
-    .main_movie_container .main_movie_contents .movie_info .info_wrapper .info_contents .main_contents .info_story{width: 56.2%; height: 43.7%;}
-    .main_movie_container .main_movie_contents{padding-bottom: 85%;}
+    .main_movie_container .main_movie_contents{padding-bottom: 93%;}
     .main_movie_container .main_movie_contents .movie_info{width: 100%; margin-left: 0;}
+    .main_movie_container .main_movie_contents .movie_info .info_wrapper .info_contents .main_contents .info_story{width: 56.2%; height: 43.7%;}
     .main_movie_container .main_movie_contents .movieSet .movie_container{width: 20%;}
     .main_movie_container .main_movie_contents .movieSet .movie_0,
     .main_movie_container .main_movie_contents .movieSet .movie_1{float: left;}
     .main_movie_container .main_movie_contents .movieSet .movie_5,
     .main_movie_container .main_movie_contents .movieSet .movie_6,
     .main_movie_container .main_movie_contents .movieSet .movie_7{display: none;}
+    .main_movie_container .main_movie_contents .more_movie_container .more_btn_wrapper{padding-bottom: 8.5%; width: 8.5%;}
+    .main_movie_container .main_movie_contents .more_movie_container .more_btn_wrapper > a{width: 6%; height: 80.65%;}
 }
 
 /* not zoom, another effect */
 @media (max-width : 680px){     /* mobile */
-    .main_movie_container .main_movie_contents{padding-bottom: 142%;}
+    .main_movie_container .main_movie_contents{padding-bottom: 154%;}
     .main_movie_container .main_movie_contents .movie_info{display: none;}
     .main_movie_container .main_movie_contents .movieSet .movie_container{width: 50%; float: left;}
 	.main_movie_container .main_movie_contents .movieSet .movie_4{display: none;}
     .main_movie_container .main_movie_contents .movieSet .movie_container .movie_wrapper .movie > a > img{width: 96%;}
+    .main_movie_container .main_movie_contents .more_movie_container .more_btn_wrapper{padding-bottom: 10%; width: 10%;}
+    .main_movie_container .main_movie_contents .more_movie_container .more_btn_wrapper > a{top: -18%; width: 7%; height: 56.82%;}
 }
  
 /* event_preview_container */
