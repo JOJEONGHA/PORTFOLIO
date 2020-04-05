@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="jquery.scrollify.js"></script>
     <link rel="stylesheet" href="css/path.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="script/data.js"></script>
+    <script src="script/menu.js"></script>
+    <script src="script/menu_side.js"></script>
+    <script src="script/movie.js"></script>
+    <script src="script/movie_info.js"></script>
     <title>lotte</title>
 </head>
 <body>
@@ -25,46 +29,32 @@
                             </div>
                             <div class="main_menu_wrapper">
                                 <div class="main_menu">
-                                    <ul class="main_menuSet">
-                                        <li><a href="javascript:void(0)"><span>예매</span></a></li>
-                                        <li><a href="javascript:void(0)"><span>영화</span></a>
+                                    <ul class = "menu_set">
+                                        <li>
+                                            <ul class="left_menu_set">
+                                                <li class="menu_piece ticketing"><a href="javascript:void(0)"><span>예매</span></a></li>
+                                                <li class="menu_piece movies"><a href="javascript:void(0)"><span>영화</span></a></li>
+                                                <li class="menu_piece cinema"><a href="javascript:void(0)"><span>영화관</span></a></li>
+                                            </ul>
                                         </li>
-                                        <li class = "none"><a href="javascript:void(0)"><span>영화관</span></a></li>
-                                        <li><a href="javascript:void(0)"><span class = "vip">VIP</span></a></li>
-                                        <li class = "none"><a href="javascript:void(0)"><span>이벤트</span></a></li>
-                                        <li><a href="javascript:void(0)"><span>스토어</span></a></li>
-                                        <li><a href="javascript:void(0)"><span>VOD</span></a></li>
+                                        <li class = "menu_piece vip">
+                                            <a href="javascript:void(0)">
+                                                <span>VIP</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <ul class="right_menu_set">
+                                                <li class="menu_piece event"><a href="javascript:void(0)"><span>이벤트</span></a></li>
+                                                <li class="menu_piece store"><a href="javascript:void(0)"><span>스토어</span></a></li>
+                                                <li class="menu_piece vod"><a href="javascript:void(0)"><span>VOD</span></a></li>
+                                            </ul>
+                                        </li>
                                     </ul>
-                                    <div class="pop_menu">
-                                        <!-- TODO : 메뉴에 따른 jquery 추가 -->
-                                        <ul class="menu_list">
-                                            <li><a href="javascript:void(0)"><span>할인안내</span></a></li>
-                                            <li><a href="javascript:void(0)"><span>포인터</span></a></li>
-                                            <li><a href="javascript:void(0)"><span>브라보클럽</span></a></li>
-                                            <li><a href="javascript:void(0)"><span>틴틴클럽</span></a></li>
-                                            <li><a href="javascript:void(0)"><span>VIP</span></a></li>
-                                            <li><a href="javascript:void(0)"><span>VIP</span></a></li>
-                                        </ul>
-                                        <div class="bg_pop_menu"></div>
-                                    </div>
-                                    <div class="bg_main_menu"></div>
+                                    <div class="pop_menu_bg"></div>
                                 </div>
                                 <div class="side_pop_menu">
                                     <ul class="side_pop_set">
-                                        <li class = "pop_menu_exit"></li>
-                                        <li><a href="javascript:void(0)"><span>예매</span></a></li>
-                                        <li><a href="javascript:void(0)"><span>영화</span></a>
-                                            <ul class="side_dept2_set">
-                                                <li><a href="javascript:void(0)"><span>현재상영작</span></a></li>
-                                                <li><a href="javascript:void(0)"><span>상영예정작</span></a></li>
-                                                <li><a href="javascript:void(0)"><span>아르떼</span></a></li>
-                                                <li><a href="javascript:void(0)"><span>오페라</span></a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="javascript:void(0)"><span>영화관</span></a></li>
-                                        <li><a href="javascript:void(0)"><span>이벤트</span></a></li>
-                                        <li><a href="javascript:void(0)"><span>스토어</span></a></li>
-                                        <li><a href="javascript:void(0)"><span>VOD</span></a></li>
+                                        <li class = "pop_menu_exit"><a href="javascript:void(0)"></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -76,23 +66,16 @@
                                 <div class="info_wrapper">
                                     <div class="info_contents align_center_trans">
                                         <div class="main_contents">
-                                            <h1>지푸라기라도 잡고 싶은 짐승들</h1>
+                                            <h1></h1>
                                             <div class="info_story">
-                                                <p>사라진 애인 때문에 사채 빚에 시달리며 한 탕을 꿈꾸는 
-                                                    태영. 아르바이트로 가족의 생계를 이어가는 가장 중만.
-                                                    과거를 지우고 새 인생을 살기 위해 남의 것을 탐하는 연희.
-                                                    라진 애인 때문에 사채 빚에 시달리며 한 탕을 꿈꾸는 태영.
-                                                    아르바이트로 가족의 생계를 이어가는 가장 중만.
-                                                    과거를 지우고 새 인생을 살기 위해 남의 것을 탐하는 연희.
-                                                    <br><br> 
-                                                     벼랑 끝에 몰린 그들 앞에 거액의 돈 가방이 나타나고.</p>
+                                                <p></p>
                                                 <div class="text_blinder"></div>
                                             </div>
                                             <ul class="video">
-                                                <li><a href="javascript:void(0)"><img src="img/video_1.png" alt=""></a></li>
-                                                <li><a href="javascript:void(0)"><img src="img/video_2.png" alt=""></a></li>
-                                                <li><a href="javascript:void(0)"><img src="img/video_3.png" alt=""></a></li>
-                                                <li><a href="javascript:void(0)"><img src="img/video_4.png" alt=""></a></li>
+                                                <li><a href="javascript:void(0)"><img></a></li>
+                                                <li><a href="javascript:void(0)"><img></a></li>
+                                                <li><a href="javascript:void(0)"><img></a></li>
+                                                <li><a href="javascript:void(0)"><img></a></li>
                                             </ul>
                                             <button type="button">예매하기</button>
                                         </div>
@@ -101,96 +84,7 @@
                                 </div>
                             </div>
                             <ul class="movieSet">
-                                <li class="movie_container movie_0">
-                                    <div class="movie_wrapper">
-                                        <div class = "movie">
-                                            <a href="javascript:void(0)">
-                                                <img src="img/movie/movie_7.png" alt="지푸라기라도 잡고싶은 짐승들" class="align_center">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="movie_container movie_1 ">
-                                    <div class="movie_wrapper">
-                                        <div class="movie">
-                                            <a href="javascript:void(0)">
-                                                <img src="img/movie/movie_7.png" alt="지푸라기라도 잡고싶은 짐승들" class="align_center">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="movie_container movie_2 ">
-                                    <div class="movie_wrapper">
-                                        <div class="movie">
-                                            <a href="javascript:void(0)">
-                                                <img src="img/movie/movie_7.png" alt="지푸라기라도 잡고싶은 짐승들" class="align_center">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="movie_container movie_3 ">
-                                    <div class="movie_wrapper">
-                                        <div class="movie">
-                                            <a href="javascript:void(0)">
-                                                <img src="img/movie/movie_7.png" alt="지푸라기라도 잡고싶은 짐승들" class="align_center">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="movie_container movie_4">
-                                    <div class="movie_wrapper">
-                                        <div class="movie">
-                                            <a href="javascript:void(0)">
-                                                <img src="img/movie/movie_7.png" alt="지푸라기라도 잡고싶은 짐승들" class="align_center">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="movie_container movie_5">
-                                    <div class="movie_wrapper">
-                                        <div class="movie">
-                                            <a href="javascript:void(0)">
-                                                <img src="img/movie/movie_7.png" alt="지푸라기라도 잡고싶은 짐승들" class="align_center">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="movie_container movie_6">
-                                    <div class="movie_wrapper">
-                                        <div class="movie">
-                                            <a href="javascript:void(0)">
-                                                <img src="img/movie/movie_7.png" alt="지푸라기라도 잡고싶은 짐승들" class="align_center">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="movie_container movie_7">
-                                    <div class="movie_wrapper">
-                                        <div class="movie">
-                                            <a href="javascript:void(0)">
-                                                <img src="img/movie/movie_7.png" alt="지푸라기라도 잡고싶은 짐승들" class="align_center">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="movie_container movie_8">
-                                    <div class="movie_wrapper">
-                                        <div class="movie">
-                                            <a href="javascript:void(0)">
-                                                <img src="img/movie/movie_7.png" alt="지푸라기라도 잡고싶은 짐승들" class="align_center">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- <li class="movie_container">
-                                    <div class="movie_wrapper">
-                                        <div class="movie">
-                                            <a href="javascript:void(0)">
-                                                <img src="img/movie/movie_7.png" alt="지푸라기라도 잡고싶은 짐승들" class="align_center">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </li> -->
+                                <!-- li movie tag -->
                             </ul>
                             <div class="more_movie_container">
                                 <div class="more_btn_wrapper">
@@ -278,7 +172,7 @@
                             </div>
                             <div class="bg_footer"></div>
                         </div>
-                    </footer> -->
+                    </footer>
                 </div>
             </div>
         </div>
