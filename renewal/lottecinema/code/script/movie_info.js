@@ -48,6 +48,19 @@ $(function(){
         bnum = movie_num;
     })
     
+    // Sample video click action
+    let sample_video_tag = $(".main_movie_container .main_movie_contents .movie_info .info_wrapper .info_contents .main_contents .video > li"),
+        video_tag = $(".main_movie_container .main_movie_contents .smaple_video_container"),
+        video_ex_btn = $(".main_movie_container .main_movie_contents .smaple_video_container .smaple_video_contents .video_wrapper .smaple_video_ex");
+
+    sample_video_tag.click(function(){
+        $(this).addClass("active");
+        video_tag.addClass("active");
+    })
+    video_ex_btn.click(function(){
+        sample_video_tag.removeClass("active");
+        video_tag.removeClass("active");
+    })
 })
 
 function init(title,info,bg,video){

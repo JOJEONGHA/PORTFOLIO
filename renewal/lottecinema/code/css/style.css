@@ -84,6 +84,16 @@ span{white-space:nowrap;}
 .main_movie_container .main_movie_contents .movie_info .info_wrapper .info_contents .main_contents > button:active{outline: 0; border: none;}
 .main_movie_container .main_movie_contents .movie_info .info_wrapper .info_contents .bg_info{position: absolute; width: 100%; height: 100%; background-size: cover; top: 0; z-index: -5;}
 
+.main_movie_container .main_movie_contents .smaple_video_container{display: none; position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; z-index: 10;}
+.main_movie_container .main_movie_contents .smaple_video_container.active{display: block;}
+.main_movie_container .main_movie_contents .smaple_video_container .smaple_video_contents{width: 100%;  position: absolute;  z-index: 5;}
+.main_movie_container .main_movie_contents .smaple_video_container .smaple_video_contents .video_wrapper{width: 70%; padding-bottom: 45%; background: #fff; margin: 0 auto; position: relative;}
+.main_movie_container .main_movie_contents .smaple_video_container .smaple_video_contents .video_wrapper .smaple_video_ex::before,
+.main_movie_container .main_movie_contents .smaple_video_container .smaple_video_contents .video_wrapper .smaple_video_ex::after{content: ""; display: block; position: absolute; width: 50px; height: 4px; background: #fff; top: -35px; right: -65px; z-index: 5;}
+.main_movie_container .main_movie_contents .smaple_video_container .smaple_video_contents .video_wrapper .smaple_video_ex::before{transform: rotate(45deg);}
+.main_movie_container .main_movie_contents .smaple_video_container .smaple_video_contents .video_wrapper .smaple_video_ex::after{transform: rotate(-45deg);}
+.main_movie_container .main_movie_contents .smaple_video_container .sample_video_bg{background: #000; opacity: 0.6; position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+
 .main_movie_container .main_movie_contents .more_movie_container{position: absolute; height: 80px; width: 100%; bottom: 0;}
 .main_movie_container .main_movie_contents .more_movie_container .more_btn_wrapper{padding-bottom: 7%; width: 7%; margin: 0 auto;}
 .main_movie_container .main_movie_contents .more_movie_container .more_btn_wrapper > a{display: block; position: absolute; width: 5%; height: 79.13%;}
