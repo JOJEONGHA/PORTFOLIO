@@ -8,6 +8,14 @@ $(function(){
     // Initalization main info
     init(title,info,bg,video);
 
+    // Info story scrollbar
+    let story_container = $(".main_movie_container .main_movie_contents .movie_info .info_wrapper .info_contents .main_contents .info_story"),
+        scrollbar = $(".fs-scrollbar > .fs-scrollbar-bar .fs-scrollbar-handle");
+    story_container.scrollbar();
+    // $(".main_movie_container .main_movie_contents .movieSet .movies_container").click(function(){
+    //     scrollbar.attr("top","0px");
+    // })
+
     // Click and Change into information area
     let chk_on, movie_num = 0, bnum = 0;
     $(".main_movie_container .main_movie_contents .movieSet .movies_container").click(function(){

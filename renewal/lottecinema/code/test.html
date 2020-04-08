@@ -4,25 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="css/perfect-scrollbar.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="script/perfect-scrollbar.js"></script>
     <style>
-        .smaple_video_container{position: fixed; width: 100vw; height: 100vh; top: 0; left: 0;}
-        .smaple_video_container .smaple_video_contents{width: 70%; position: absolute; z-index: 5; }
-        .smaple_video_container .smaple_video_contents .video_wrapper{width: 70%; padding-bottom: 45%; background: #fff; margin: 0 auto; position: relative;}
-        .smaple_video_container .smaple_video_contents .video_wrapper > a::before,
-        .smaple_video_container .smaple_video_contents .video_wrapper > a::after{content: ""; display: block; position: absolute; width: 50px; height: 4px; background: #fff; top: -35px; right: -65px; z-index: 5;}
-        .smaple_video_container .smaple_video_contents .video_wrapper > a::before{transform: rotate(45deg);}
-        .smaple_video_container .smaple_video_contents .video_wrapper > a::after{transform: rotate(-45deg);}
-        .smaple_video_container .sample_video_bg{background: #000; opacity: 0.6; position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+        .info_story{margin: 3.8% 0 1% 0; width: 45%; height: 500px; overflow: hidden; position: relative; border: 1px solid red;}
+        .info_story .ps__rail-y{opacity: 0.6; display: block;}
     </style>
 </head>
 <body>
-    <div class="smaple_video_container">
-        <div class="smaple_video_contents align_center_trans">
-            <div class="video_wrapper">
-                <a class="smaple_video_ex" href="javascript:void(0)"></a>
-            </div>
-        </div>   
-        <div class="sample_video_bg"></div>
+    <div class="info_story">
+        <p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p><p>hello<br><br></p>
+        <div class="text_blinder"></div>
     </div>
+    <script>
+        new PerfectScrollbar('.info_story');
+    </script>
 </body>
 </html>
