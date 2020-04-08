@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pop_page_container{position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; z-index: 15;}
+        .pop_page_container .pop_page_wapper{position: absolute; background: #fbfbfb; width: 50%; height: 80%; left: 50%; top: 50%; transform: translate(-50%,-50%);}
+        .pop_page_container .pop_page_wapper > a{display: block; position: absolute; right: 0px; top: -25px;}
+        .pop_page_container .pop_page_wapper > a::before,
+        .pop_page_container .pop_page_wapper > a::after{content: ""; display: block; position: absolute; width: 50px; height: 4px; background: #fff; top: 0px; left: 0px;}
+        .pop_page_container .pop_page_wapper > a::before{transform: rotate(45deg);}
+        .pop_page_container .pop_page_wapper > a::after{transform: rotate(-45deg);}
+        .pop_page_container .bg{position: absolute; left: 0; right: 0; width: 100%; height: 100%; background: #000; opacity: 0.5; z-index: -5;}
+    </style>
+</head>
+<body>
+    <div class="pop_page_container">
+        <div class="pop_page_wapper">
+            <a href="javascript:void(0)"></a>
+        </div>
+        <div class="bg"></div>
+    </div>
+</body>
+</html>

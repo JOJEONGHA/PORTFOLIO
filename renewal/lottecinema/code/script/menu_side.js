@@ -33,13 +33,13 @@ $(function(){
     let side_menu_li = $(".main_menu_container .main_menu_contents .main_menu_wrapper .side_pop_menu .side_pop_set > li");
 
     side_menu_li.click(function(){
-        $(this).children(".side_dept2_set").slideToggle("slow",function(){});
+        if($(this).hasClass("active") == false){
+            side_menu_li.children(".side_dept2_set").slideUp("slow");
+            $(this).children(".side_dept2_set").slideDown("slow");
+            side_menu_li.removeClass("active");
+            $(this).addClass("active");
+        }else{
+            
+        }
     })
 })
-
-/* <ul class="side_dept2_set">
-    <li><a href="javascript:void(0)"><span>현재상영작</span></a></li>
-    <li><a href="javascript:void(0)"><span>상영예정작</span></a></li>
-    <li><a href="javascript:void(0)"><span>아르떼</span></a></li>
-    <li><a href="javascript:void(0)"><span>오페라</span></a></li>
-</ul> */

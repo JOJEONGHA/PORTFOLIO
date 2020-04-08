@@ -97,13 +97,14 @@ body {
 .container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .core > ul{display: flex; flex-direction: column; height: 100%; }
 .container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .core > ul .contents{flex : 1; }
 .container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .left > ul .contents .title{font-size: 1.1em; padding: 20px 0 0 15px;}
-.container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .left > ul .contents span ~ span{font-size: 1.5em;}
+.container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .left > ul .contents span ~ span{font-size: 1.2em;}
 .container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .left > ul .contents > span{display: block; font-family: 'NanumBarunGothic', 'serif'; color:#fff; }
 .container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .left > ul .concept .title{padding-bottom: 20px;}
 .container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .left > ul .concept .text2 ,
 .container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .left > ul .contents > span ~ span{padding: 0 0 0 50px;} 
 .container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .left > ul .color .rcolor{padding: 15px 0 0 35px;}
 .container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .left > ul .color .rcolor > li{border-radius: 50px; width: 34px; height: 34px; background: #ede2cf; float: left; margin: 0 20px 0 0;}
+.container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .left > ul .platform .title{padding-bottom : 20px;}
 .container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .right > ul .btn{position: relative;}
 .container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .right > ul .btn > a {position: absolute; display: inline-block; width : 210px; height: 60px; font-family: 'NanumBarunGothic', 'serif'; color:#fff; font-size: 1.5em; text-align: center; line-height: 59px; border: 2px solid #a1a1a1; right : 170px;}
 .container_work .contents .core .web .weblist .work.mid .work_container .web_container .contents_web .right > ul .btn > a.off{opacity: 0;}
